@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faraz Ahammed </title>
+    <title>Faraz Ahammed CM</title>
     <link rel="icon" href="https://i.postimg.cc/MGW5pBTs/dp-1.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -304,14 +304,13 @@
             display: none;
             position: absolute;
             right: 0;
-            top: 100%;
+            top: calc(100% + 5px);
             background-color: var(--card-bg);
             min-width: 160px;
             box-shadow: 0 8px 24px var(--card-shadow);
             border-radius: 10px;
-            z-index: 1;
+            z-index: 10;
             border: 1px solid rgba(0, 0, 0, 0.08);
-            margin-top: 10px;
             overflow: hidden;
         }
 
@@ -331,7 +330,7 @@
             color: white;
         }
 
-        .language-selector:hover .language-options {
+        .language-selector.active .language-options {
             display: block;
         }
 
@@ -395,8 +394,8 @@
                 <button id="theme-toggle" class="btn">
                     <i class="fas fa-moon"></i> <span class="theme-text">Dark Mode</span>
                 </button>
-                <div class="language-selector">
-                    <button class="btn btn-outline">
+                <div class="language-selector" id="language-selector">
+                    <button class="btn btn-outline language-btn">
                         <i class="fas fa-language"></i> <span class="language-text">Language</span>
                     </button>
                     <div class="language-options">
@@ -545,10 +544,27 @@
             }
         });
 
-        // Language Support
-        const languageText = document.querySelector('.language-text');
-        const languageOptions = document.querySelectorAll('.language-options a');
+        // Language Selector Functionality
+        const languageSelector = document.getElementById('language-selector');
+        const languageBtn = languageSelector.querySelector('.language-btn');
+        const languageOptions = languageSelector.querySelector('.language-options');
+        const languageText = languageSelector.querySelector('.language-text');
+        const languageLinks = languageOptions.querySelectorAll('a');
         
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!languageSelector.contains(e.target)) {
+                languageSelector.classList.remove('active');
+            }
+        });
+        
+        // Toggle language dropdown
+        languageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageSelector.classList.toggle('active');
+        });
+        
+        // Language Support
         // Define translations
         const translations = {
             'en': {
@@ -690,13 +706,16 @@
         updateLanguage(currentLanguage);
 
         // Language selection
-        languageOptions.forEach(option => {
+        languageLinks.forEach(option => {
             option.addEventListener('click', (e) => {
                 e.preventDefault();
                 const lang = option.getAttribute('data-lang');
                 currentLanguage = lang;
                 localStorage.setItem('language', lang);
                 updateLanguage(lang);
+                
+                // Close the dropdown after selection
+                languageSelector.classList.remove('active');
             });
         });
 
@@ -735,7 +754,7 @@
             document.querySelector('.rights-text').textContent = translations[lang]['rightsText'];
             
             // Update active language indicator
-            languageOptions.forEach(option => {
+            languageLinks.forEach(option => {
                 const icon = option.querySelector('i');
                 if (option.getAttribute('data-lang') === lang) {
                     icon.style.display = 'inline-block';
