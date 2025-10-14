@@ -1,864 +1,1802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="title">Faraz Ahammed CM | Content Creator & Student</title>
-
-  <meta name="description" content="Faraz Ahammed CM — Content Creator & Digital Media Professional. Co-founder of HF Media Malayalam and student at PMSAPTHSS." />
-  <meta name="author" content="Faraz Ahammed CM" />
-  <link rel="icon" href="https://i.postimg.cc/MGW5pBTs/dp-1.png" type="image/png">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --card: rgba(255, 255, 255, 0.1);
-      --muted: rgba(255, 255, 255, 0.7);
-      --text: #ffffff;
-      --primary: #a78bfa;
-      --secondary: #7c3aed;
-      --accent: #34d399;
-      --glass: rgba(255, 255, 255, 0.15);
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      --radius: 20px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --border: 1px solid rgba(255, 255, 255, 0.18);
-      --blur: blur(12px);
-    }
-
-    /* Light theme variables (default) */
-    [data-theme="light"]{
-      --bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      --card: rgba(255, 255, 255, 0.85);
-      --muted: #4b5563; /* Dark gray for better readability */
-      --text: #1f2937; /* Almost black for better readability */
-      --primary: #3b82f6;
-      --secondary: #6366f1;
-      --accent: #10b981;
-      --glass: rgba(255, 255, 255, 0.7);
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      --border: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    /* Dark theme variables */
-    [data-theme="dark"]{
-      --bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      --card: rgba(15, 23, 42, 0.7);
-      --muted: rgba(255, 255, 255, 0.6);
-      --text: #f1f5f9;
-      --primary: #818cf8;
-      --secondary: #6366f1;
-      --accent: #10b981;
-      --glass: rgba(15, 23, 42, 0.5);
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      --border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      transition: var(--transition);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .container{max-width:1100px;margin:0 auto;padding:24px;}
-
-    /* Glassmorphism base styles */
-    .glass {
-      background: var(--card);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    /* Header */
-    header{
-      position: sticky; top:12px; z-index:60;
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      margin: 12px 0; 
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: var(--border);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:12px;
-    }
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-weight:800}
-    .brand img{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,0.2);object-fit:cover}
-    [data-theme="light"] .brand img{border:2px solid rgba(0,0,0,0.1)}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-link{color:var(--text);text-decoration:none;font-weight:600;padding:8px 16px;border-radius:12px;transition:var(--transition)}
-    .nav-link:hover{background:var(--glass);transform:translateY(-2px);color:var(--primary)}
-
-    .controls{display:flex;gap:10px;align-items:center}
-    .btn{
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color:white;
-      border:none;
-      padding:10px 18px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      transition:var(--transition);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: var(--border);
-    }
-    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
-    .btn-outline{
-      background:transparent;
-      border: var(--border);
-      color:var(--text);
-      padding:9px 16px;
-      border-radius:12px;
-      cursor:pointer;
-      transition: var(--transition);
-    }
-    .btn-outline:hover {
-      background: var(--glass);
-      transform: translateY(-3px);
-    }
-
-    .lang-select{
-      appearance:none;
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: var(--border);
-      padding:8px 12px;
-      border-radius:10px;
-      color: #000000; /* Black text for better visibility */
-      cursor: pointer;
-      font-weight: 600;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Faraz Ahammed CM | Content Creator & Digital Media Professional</title>
+    <link rel="icon" href="https://i.postimg.cc/MGW5pBTs/dp-1.png" type="image/png">
     
-    /* Style the dropdown options */
-    .lang-select option {
-      background: rgba(255, 255, 255, 0.95);
-      color: #000000;
-      font-weight: 600;
-    }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    .theme-btn{
-      background:var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      padding:8px 12px;
-      border-radius:10px;
-      border: var(--border);
-      cursor:pointer;
-      color: var(--text);
-      transition: var(--transition);
-    }
-    .theme-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-    [data-theme="light"] .theme-btn:hover {
-      background: rgba(0, 0, 0, 0.05);
-    }
-
-    /* Hero */
-    .hero{
-      display:grid;
-      grid-template-columns:360px 1fr;
-      gap:40px;
-      align-items:center;
-      padding:48px 0;
-    }
-    .profile-wrap{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-    }
-    .profile{
-      width:320px;
-      height:320px;
-      border-radius:50%;
-      object-fit:cover;
-      border: var(--border);
-      box-shadow:0 30px 60px rgba(0,0,0,0.3);
-      background:linear-gradient(135deg,var(--primary),var(--secondary));
-      padding:8px;
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-    }
-    .profile-inner{
-      width:100%;
-      height:100%;
-      border-radius:50%;
-      overflow:hidden;
-      border: var(--border);
-    }
-    .profile-inner img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .hero-card{
-      padding:24px;
-      border-radius:var(--radius);
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .hero h1{
-      font-size:38px;
-      margin:6px 0;
-      line-height:1.05;
-      background:linear-gradient(90deg,var(--primary),var(--secondary));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .role{
-      color:var(--accent);
-      font-weight:700;
-      margin-bottom:10px;
-    }
-    .lead{
-      color:var(--muted);
-      margin-bottom:18px;
-      max-width:560px;
-      line-height: 1.6;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    /* Cards & sections */
-    .section{
-      padding:64px 0;
-      border-radius:12px;
-    }
-    .section-title{
-      font-size:26px;
-      margin-bottom:18px;
-      font-weight:800;
-      display:flex;
-      align-items:center;
-      gap:12px;
-      color: var(--text);
-    }
-    .card-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-    }
-    .card{
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      padding:24px;
-      border-radius:var(--radius);
-      box-shadow: var(--shadow);
-      transition:var(--transition);
-      border: var(--border);
-    }
-    .card:hover{
-      transform:translateY(-6px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    }
-
-    .card h3{
-      color:var(--primary);
-      margin-bottom:8px;
-    }
-    .info-item{
-      margin-bottom:10px;
-      color:var(--muted);
-    }
-
-    /* Professional Profile Cards - 1 per row on mobile */
-    @media (max-width: 768px) {
-      #profile .card-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
-    /* highlights */
-    .highlights{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-    .highlight{
-      flex:1;
-      min-width:220px;
-      padding:24px;
-      border-radius:var(--radius);
-      color:white;
-      background:linear-gradient(135deg,var(--primary),var(--secondary));
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: var(--border);
-    }
-
-    /* social */
-    .social-links{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .social-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:12px;
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      box-shadow: var(--shadow);
-      text-decoration:none;
-      color:var(--text);
-      border: var(--border);
-      transition: var(--transition);
-    }
-    .social-btn:hover{
-      transform:translateY(-4px);
-      background:linear-gradient(135deg,var(--primary),var(--secondary));
-      color:white;
-    }
-
-    footer{
-      padding:22px 0;
-      text-align:center;
-      color:var(--muted);
-      margin-top:24px;
-    }
-
-    /* Back to top button */
-    #backToTop {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: var(--border);
-    }
-
-    /* small screens */
-    @media (max-width: 980px){
-      .hero{
-        grid-template-columns:1fr;
-        gap:28px;
-        text-align:center;
-      }
-      .profile{
-        width:260px;
-        height:260px;
-      }
-      .hero-card{
-        margin-top:6px;
-      }
-      .nav{
-        padding:10px;
-      }
-      .nav-links{
-        display:none;
-      }
-    }
-
-    @media (max-width:480px){
-      .profile{
-        width:200px;
-        height:200px;
-      }
-      .hero h1{
-        font-size:28px;
-      }
-      .hero-actions {
-        justify-content: center;
-      }
-      .highlights {
-        flex-direction: column;
-      }
-    }
-
-    /* little animations */
-    .fade-up{
-      opacity:0;
-      transform:translateY(12px);
-      transition:var(--transition);
-    }
-    .fade-up.show{
-      opacity:1;
-      transform:translateY(0);
-    }
-    .chip{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 14px;
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border-radius:999px;
-      border: var(--border);
-    }
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    /* Scrollbar styling */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    [data-theme="light"] ::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.05);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--primary);
-      border-radius: 4px;
-    }
-  </style>
+    <style>
+        :root {
+            /* Default Theme - Ocean Blue */
+            --primary: #3B82F6;
+            --primary-dark: #1D4ED8;
+            --secondary: #06B6D4;
+            --accent: #10B981;
+            --background: #0F172A;
+            --surface: #1E293B;
+            --text: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border: #334155;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --glass: rgba(255, 255, 255, 0.05);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="purple-dream"] {
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --secondary: #EC4899;
+            --accent: #F59E0B;
+            --background: #1E1B2E;
+            --surface: #2A2640;
+            --text: #FAFAFA;
+            --text-muted: #D1D5DB;
+            --border: #4C1D95;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        [data-theme="sunset-glow"] {
+            --primary: #F97316;
+            --primary-dark: #EA580C;
+            --secondary: #EAB308;
+            --accent: #84CC16;
+            --background: #1C1917;
+            --surface: #292524;
+            --text: #FAFAF9;
+            --text-muted: #D6D3D1;
+            --border: #7C2D12;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        [data-theme="forest-emerald"] {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --secondary: #84CC16;
+            --accent: #3B82F6;
+            --background: #0F172A;
+            --surface: #1E293B;
+            --text: #ECFDF5;
+            --text-muted: #A7F3D0;
+            --border: #065F46;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        [data-theme="midnight-rose"] {
+            --primary: #DB2777;
+            --primary-dark: #BE185D;
+            --secondary: #7E22CE;
+            --accent: #F59E0B;
+            --background: #1F1F23;
+            --surface: #2D2D35;
+            --text: #FAFAFA;
+            --text-muted: #D4D4D8;
+            --border: #831843;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - Burger Menu */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1200px;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            z-index: 1000;
+            padding: 15px 25px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            z-index: 1001;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            background: var(--gradient);
+            padding: 2px;
+            flex-shrink: 0;
+        }
+
+        .logo-img-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+
+        /* Burger Menu Styles */
+        .burger-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+
+        .burger-line {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .burger-menu.active .burger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .burger-menu.active .burger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active .burger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .burger-menu:hover .burger-line {
+            background: var(--primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-100%);
+            transition: var(--transition);
+            padding: 80px 20px 40px;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .mobile-nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            background: var(--glass);
+            border: 1px solid var(--border);
+        }
+
+        .mobile-nav-link:hover {
+            background: var(--gradient);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .mobile-language-selector, .mobile-theme-selector {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 12px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .mobile-cta-button {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .mobile-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .language-selector, .theme-selector {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            min-width: 120px;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero Section - Centered Profile */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: var(--gradient);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(80px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass);
+            transform: translateY(-2px);
+        }
+
+        /* Centered Profile Picture */
+        .hero-profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 1;
+        }
+
+        .profile-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--gradient);
+            padding: 8px;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--surface);
+            background: linear-gradient(45deg, var(--primary-dark), var(--secondary));
+        }
+
+        .profile-dots {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background-image: radial-gradient(var(--primary) 2px, transparent 2px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Profile Cards */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .profile-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--glass);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .profile-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .info-item strong {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-item span {
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .skill-category {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            height: 100%;
+        }
+
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.5;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .highlight-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient);
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+
+        .highlight-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .highlight-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--glass);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary);
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .highlight-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* Connect Section */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .social-link:hover {
+            background: var(--glass);
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .nav-controls {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            header {
+                padding: 12px 20px;
+            }
+            
+            .profile-container {
+                max-width: 250px;
+            }
+
+            .social-links {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .profile-container {
+                max-width: 220px;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        /* Desktop Navigation - Hidden on all devices */
+        .nav-links {
+            display: none;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .skill-list li {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        [dir="rtl"] .skill-list li::before {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .section-title::after {
+            left: auto;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-
     <!-- Header -->
-    <header aria-label="Main header">
-      <div class="nav" role="navigation" aria-label="Primary navigation">
-        <a class="brand" href="#">
-          <img src="https://i.postimg.cc/MGW5pBTs/dp-1.png" alt="Faraz profile logo">
-          <span data-i18n="brand">Faraz Ahammed CM</span>
-        </a>
-
-        <div class="nav-links" aria-hidden="false">
-          <a class="nav-link" href="#about" data-i18n="aboutLink">About</a>
-          <a class="nav-link" href="#profile" data-i18n="profileLink">Profile</a>
-          <a class="nav-link" href="#highlights" data-i18n="highlightsLink">Highlights</a>
-          <a class="nav-link" href="#connect" data-i18n="connectLink">Connect</a>
-        </div>
-
-        <div class="controls" role="group" aria-label="Controls">
-          <select id="language-selector" class="lang-select" aria-label="Select language">
-            <option value="en">EN</option>
-            <option value="ml">ML</option>
-            <option value="hi">HI</option>
-            <option value="ar">AR</option>
-            <option value="sa">SA</option>
-          </select>
-
-          <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme" title="Toggle theme">
-            <i class="fas fa-moon"></i>
-          </button>
-
-          <a class="btn" href="#connect" data-i18n="getInTouch"><i class="fas fa-paper-plane"></i><span>Get in touch</span></a>
-        </div>
-      </div>
+    <header>
+        <nav class="nav">
+            <a href="#" class="logo">
+                <div class="logo-img">
+                    <img src="https://i.postimg.cc/MGW5pBTs/dp-1.png" alt="Faraz" class="logo-img-inner" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'">
+                </div>
+                <span data-i18n="brand">Faraz Ahammed CM</span>
+            </a>
+            
+            <!-- Burger Menu Button -->
+            <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            
+            <div class="nav-controls">
+                <select class="language-selector" id="languageSelector">
+                    <option value="en">English</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ar">Arabic</option>
+                    <option value="sa">Sanskrit</option>
+                </select>
+                <select class="theme-selector" id="themeSelector">
+                    <option value="default">Ocean Blue</option>
+                    <option value="purple-dream">Purple Dream</option>
+                    <option value="sunset-glow">Sunset Glow</option>
+                    <option value="forest-emerald">Forest Emerald</option>
+                    <option value="midnight-rose">Midnight Rose</option>
+                </select>
+                <a href="#connect" class="cta-button" data-i18n="getInTouch">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Get In Touch</span>
+                </a>
+            </div>
+        </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-nav-link" data-i18n="aboutLink" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="#profile" class="mobile-nav-link" data-i18n="profileLink" onclick="closeMobileMenu()">Profile</a></li>
+            <li><a href="#skills" class="mobile-nav-link" data-i18n="skillsLink" onclick="closeMobileMenu()">Skills</a></li>
+            <li><a href="#highlights" class="mobile-nav-link" data-i18n="highlightsLink" onclick="closeMobileMenu()">Highlights</a></li>
+            <li><a href="#connect" class="mobile-nav-link" data-i18n="connectLink" onclick="closeMobileMenu()">Connect</a></li>
+        </ul>
+        
+        <div class="mobile-controls">
+            <select class="mobile-language-selector" id="mobileLanguageSelector">
+                <option value="en">English</option>
+                <option value="ml">Malayalam</option>
+                <option value="hi">Hindi</option>
+                <option value="ar">Arabic</option>
+                <option value="sa">Sanskrit</option>
+            </select>
+            <select class="mobile-theme-selector" id="mobileThemeSelector">
+                <option value="default">Ocean Blue</option>
+                <option value="purple-dream">Purple Dream</option>
+                <option value="sunset-glow">Sunset Glow</option>
+                <option value="forest-emerald">Forest Emerald</option>
+                <option value="midnight-rose">Midnight Rose</option>
+            </select>
+            <a href="#connect" class="mobile-cta-button" data-i18n="getInTouch" onclick="closeMobileMenu()">
+                <i class="fas fa-paper-plane"></i>
+                <span>Get In Touch</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section with Centered Profile -->
     <section class="hero" id="about">
-      <div class="profile-wrap fade-up" style="--delay:0.05s">
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="https://i.postimg.cc/rdt2JPB9/profile-new.jpg" alt="Faraz Ahammed CM profile photo">
-          </div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span data-i18n="student">10th Grade Student at PMSAPTHSS</span>
+                </div>
+                <h1 class="hero-title" data-i18n="heroName">Faraz Ahammed CM</h1>
+                <h2 class="hero-subtitle" data-i18n="heroRole">Content Creator & Digital Media Professional</h2>
+                <p class="hero-description" data-i18n="heroDesc">
+                    Co-founder of HF Media Malayalam YouTube Channel and official handle of English Daily Shots. 
+                    Passionate about creating engaging content while pursuing academic excellence.
+                </p>
+                <div class="hero-actions">
+                    <a href="#connect" class="btn btn-primary" data-i18n="contactBtn">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Me</span>
+                    </a>
+                    <a href="#profile" class="btn btn-secondary" data-i18n="viewProfileBtn">
+                        <i class="fas fa-user"></i>
+                        <span>View Profile</span>
+                    </a>
+                </div>
+                
+                <!-- Centered Profile Picture -->
+                <div class="hero-profile fade-in">
+                    <div class="profile-container">
+                        <div class="profile-dots"></div>
+                        <div class="profile-frame">
+                            <img src="https://i.postimg.cc/rdt2JPB9/profile-new.jpg" 
+                                 alt="Faraz Ahammed CM" 
+                                 class="profile-image"
+                                 onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80'">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+    <!-- Rest of the sections remain the same as before -->
+    <!-- Profile Section -->
+    <section class="section" id="profile">
+        <div class="container">
+            <h2 class="section-title fade-in" data-i18n="profileTitle">Professional Profile</h2>
+            <div class="profile-grid">
+                <!-- Profile cards content same as before -->
+                <div class="profile-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3 data-i18n="personalTitle">Personal Information</h3>
+                    <div class="info-item">
+                        <strong data-i18n="nameLabel">Full Name</strong>
+                        <span data-i18n="nameValue">Faraz Ahammed CM</span>
+                    </div>
+                    <div class="info-item">
+                        <strong data-i18n="genderLabel">Gender</strong>
+                        <span data-i18n="genderValue">Male</span>
+                    </div>
+                    <div class="info-item">
+                        <strong data-i18n="dobLabel">Date of Birth</strong>
+                        <span data-i18n="dobValue">July 18, 2010</span>
+                    </div>
+                    <div class="info-item">
+                        <strong data-i18n="emailLabel">Email</strong>
+                        <span data-i18n="emailValue">farazahammedcm@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <strong data-i18n="phoneLabel">Contact</strong>
+                        <span data-i18n="phoneValue">+91 9037203595</span>
+                    </div>
+                </div>
 
-      <div class="hero-card fade-up" style="--delay:0.1s">
-        <p class="chip" aria-hidden="false"><i class="fas fa-graduation-cap"></i><span data-i18n="student">10th grade student at PMSAPTHSS</span></p>
-        <h1 data-i18n="heroName">Faraz Ahammed CM</h1>
-        <div class="role" data-i18n="heroRole">Content Creator & Digital Media Professional</div>
-        <p class="lead" data-i18n="heroDesc">Co-founder of HF Media Malayalam YouTube Channel and official handle of English Daily Shots. Passionate about creating engaging content while pursuing academic excellence.</p>
+                <div class="profile-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 data-i18n="professionalBg">Professional Background</h3>
+                    <div class="info-item">
+                        <strong data-i18n="currentRoleLabel">Current Role</strong>
+                        <span data-i18n="currentRoleValue">Co-founder of HF Media Malayalam YouTube Channel & Official Handle of English Daily Shots</span>
+                    </div>
+                    <div class="info-item">
+                        <strong data-i18n="responsibilitiesLabel">Primary Responsibilities</strong>
+                        <span data-i18n="responsibilitiesValue">Content Creation, Video Production, Script Writing, Video Editing, Social Media Management</span>
+                    </div>
+                </div>
 
-        <div class="hero-actions">
-          <a class="btn" href="#connect" data-i18n="contactBtn"><i class="fas fa-phone"></i>Contact</a>
-          <a class="btn btn-outline" href="#profile" data-i18n="viewProfileBtn"><i class="fas fa-user"></i>Profile</a>
-          <a class="btn btn-outline" href="https://farazahammed.blogspot.com/" target="_blank" rel="noopener" data-i18n="blogBtn"><i class="fab fa-blogger"></i>Blogspot</a>
+                <div class="profile-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-i18n="educationHeading">Education & Background</h3>
+                    <div class="info-item">
+                        <strong data-i18n="currentInstitutionLabel">Current Institution</strong>
+                        <span data-i18n="currentInstitutionValue">PMSAPTHSS (10th grade)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong data-i18n="previousInstitutionsLabel">Previous Institutions</strong>
+                        <span data-i18n="previousInstitutionsValue">K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur</span>
+                    </div>
+                    <div class="info-item">
+                        <strong data-i18n="previousResidenceLabel">Previous Residence</strong>
+                        <span data-i18n="previousResidenceValue">Islahiya Hostel Chennamangallur</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- PROFILE -->
-    <section id="profile" class="section fade-up">
-      <h2 class="section-title" data-i18n="profileTitle"><i class="fas fa-id-card"></i> Professional Profile</h2>
-
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-user-circle fa-2x" style="color:var(--primary)"></i></div>
-          <h3 data-i18n="personalTitle">Personal Information</h3>
-
-          <div class="info-item"><strong data-i18n="nameLabel">Full Name</strong><div data-i18n="nameValue">Faraz Ahammed CM</div></div>
-          <div class="info-item"><strong data-i18n="genderLabel">Gender</strong><div data-i18n="genderValue">Male</div></div>
-          <div class="info-item"><strong data-i18n="dobLabel">Date of Birth</strong><div data-i18n="dobValue">July 18, 2010</div></div>
-          <div class="info-item"><strong data-i18n="emailLabel">Email</strong><div data-i18n="emailValue">farazahammedcm@gmail.com</div></div>
-          <div class="info-item"><strong data-i18n="phoneLabel">Contact</strong><div data-i18n="phoneValue">+91 9037203595</div></div>
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in" data-i18n="skillsTitle">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3 data-i18n="contentCreationTitle">Content Creation</h3>
+                    <ul class="skill-list">
+                        <li data-i18n="contentSkill1">Video Production</li>
+                        <li data-i18n="contentSkill2">Script Writing</li>
+                        <li data-i18n="contentSkill3">Video Editing</li>
+                        <li data-i18n="contentSkill4">Storytelling & Idea Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3 data-i18n="digitalMediaTitle">Digital Media</h3>
+                    <ul class="skill-list">
+                        <li data-i18n="digitalSkill1">Social Media Management</li>
+                        <li data-i18n="digitalSkill2">YouTube Channel Growth</li>
+                        <li data-i18n="digitalSkill3">Content Strategy</li>
+                        <li data-i18n="digitalSkill4">Audience Engagement</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3 data-i18n="professionalSkillsTitle">Professional Skills</h3>
+                    <ul class="skill-list">
+                        <li data-i18n="proSkill1">Time Management</li>
+                        <li data-i18n="proSkill2">Research & Analysis</li>
+                        <li data-i18n="proSkill3">Communication</li>
+                        <li data-i18n="proSkill4">Continuous Learning</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-briefcase fa-2x" style="color:var(--primary)"></i></div>
-          <h3 data-i18n="professionalBg">Professional Background</h3>
-
-          <div class="info-item"><strong data-i18n="currentRoleLabel">Current Role</strong><div data-i18n="currentRoleValue">Co-founder of HF Media Malayalam YouTube Channel & Official Handle of English Daily Shots</div></div>
-          <div class="info-item"><strong data-i18n="responsibilitiesLabel">Primary Responsibilities</strong><div data-i18n="responsibilitiesValue">Content Creation, Video Production, Script Writing, Video Editing, Social Media Management</div></div>
-        </div>
-
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-graduation-cap fa-2x" style="color:var(--primary)"></i></div>
-          <h3 data-i18n="educationHeading">Education & Background</h3>
-
-          <div class="info-item"><strong data-i18n="currentInstitutionLabel">Current Institution</strong><div data-i18n="currentInstitutionValue">PMSAPTHSS (10th grade)</div></div>
-          <div class="info-item"><strong data-i18n="previousInstitutionsLabel">Previous Institutions</strong><div data-i18n="previousInstitutionsValue">K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur</div></div>
-          <div class="info-item"><strong data-i18n="previousResidenceLabel">Previous Residence</strong><div data-i18n="previousResidenceValue">Islahiya Hostel Chennamangallur</div></div>
-        </div>
-      </div>
-
-      <div style="height:18px"></div>
-
-      <div class="card-grid">
-        <div class="card">
-          <h3 data-i18n="contentCreationTitle">Content Creation</h3>
-          <ul style="margin-top:8px;color:var(--muted);line-height:1.8">
-            <li data-i18n="contentSkill1">Video Production</li>
-            <li data-i18n="contentSkill2">Script Writing</li>
-            <li data-i18n="contentSkill3">Video Editing</li>
-            <li data-i18n="contentSkill4">Storytelling & Idea Development</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="digitalMediaTitle">Digital Media</h3>
-          <ul style="margin-top:8px;color:var(--muted);line-height:1.8">
-            <li data-i18n="digitalSkill1">Social Media Management</li>
-            <li data-i18n="digitalSkill2">YouTube Channel Growth</li>
-            <li data-i18n="digitalSkill3">Content Strategy</li>
-            <li data-i18n="digitalSkill4">Audience Engagement</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="professionalSkillsTitle">Professional Skills</h3>
-          <ul style="margin-top:8px;color:var(--muted);line-height:1.8">
-            <li data-i18n="proSkill1">Time Management</li>
-            <li data-i18n="proSkill2">Research & Analysis</li>
-            <li data-i18n="proSkill3">Communication</li>
-            <li data-i18n="proSkill4">Continuous Learning</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <!-- Highlights -->
-    <section id="highlights" class="section fade-up">
-      <h2 class="section-title" data-i18n="highlightsTitle"><i class="fab fa-trophy"></i> Professional Highlights</h2>
-      <div class="highlights">
-        <div class="highlight">
-          <i class="fab fa-youtube fa-2x"></i>
-          <h3 data-i18n="highlight1Title">HF Media Malayalam</h3>
-          <p style="margin-top:8px" data-i18n="highlight1Desc">Co-founded and actively contributing to a growing YouTube channel focused on quality content creation and community growth.</p>
+    <!-- Highlights Section -->
+    <section class="section" id="highlights">
+        <div class="container">
+            <h2 class="section-title fade-in" data-i18n="highlightsTitle">Professional Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card fade-in">
+                    <div class="highlight-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 data-i18n="highlight1Title">HF Media Malayalam</h3>
+                    <p data-i18n="highlight1Desc">Co-founded and actively contributing to a growing YouTube channel focused on quality content creation and community growth.</p>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3 data-i18n="highlight2Title">English Daily Shots</h3>
+                    <p data-i18n="highlight2Desc">Managing the official social presence for a digital English grammar platform — short lessons, concise tips.</p>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-i18n="highlight3Title">Academic Pursuits</h3>
+                    <p data-i18n="highlight3Desc">Balancing content creation with studies — currently in 10th grade at PMSAPTHSS.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="highlight">
-          <i class="fas fa-newspaper fa-2x"></i>
-          <h3 data-i18n="highlight2Title">English Daily Shots</h3>
-          <p style="margin-top:8px" data-i18n="highlight2Desc">Managing the official social presence for a digital English grammar platform — short lessons, concise tips.</p>
-        </div>
-
-        <div class="highlight">
-          <i class="fas fa-graduation-cap fa-2x"></i>
-          <h3 data-i18n="highlight3Title">Academic Pursuits</h3>
-          <p style="margin-top:8px" data-i18n="highlight3Desc">Balancing content creation with studies — currently in 10th grade at PMSAPTHSS.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Connect -->
-    <section id="connect" class="section fade-up">
-      <h2 class="section-title" data-i18n="connectTitle"><i class="fas fa-hands-helping"></i> Connect With Me</h2>
-      <p style="color:var(--muted)" data-i18n="connectLead">Let's collaborate or just have a conversation — I'm open for creative projects, simple collaborations and advice.</p>
-
-      <div style="margin-top:18px" class="social-links">
-        <a class="social-btn" href="https://farazahammed.blogspot.com/" target="_blank" rel="noopener" aria-label="Blogspot">
-          <i class="fab fa-blogger"></i><span data-i18n="blogText">Blogspot</span>
-        </a>
-        <a class="social-btn" href="https://www.instagram.com/faraz_ahammed_cm/" target="_blank" rel="noopener" aria-label="Instagram">
-          <i class="fab fa-instagram"></i><span data-i18n="instagramText">Instagram</span>
-        </a>
-        <a class="social-btn" href="https://www.facebook.com/profile.php?id=61555433094253&ref=fb_bidir_ig_profile_ac" target="_blank" rel="noopener" aria-label="Facebook">
-          <i class="fab fa-facebook"></i><span data-i18n="facebookText">Facebook</span>
-        </a>
-        <a class="social-btn" href="https://www.linkedin.com/in/faraz-ahammed-cm-69b4b8365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i><span data-i18n="linkedinText">LinkedIn</span>
-        </a>
-        <a class="social-btn" href="https://wa.me/+919037203595?text=Hello%20Faraz" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i><span data-i18n="whatsappText">WhatsApp</span>
-        </a>
-        <a class="social-btn" href="https://x.com/@farazahammedcm" target="_blank" rel="noopener" aria-label="X">
-          <i class="fab fa-twitter"></i><span data-i18n="twitterText">X</span>
-        </a>
-      </div>
+    <!-- Connect Section -->
+    <section class="section" id="connect">
+        <div class="container">
+            <h2 class="section-title fade-in" data-i18n="connectTitle">Connect With Me</h2>
+            <p class="text-center" style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="connectLead">
+                Let's collaborate or just have a conversation — I'm open for creative projects, collaborations and advice.
+            </p>
+            <div class="social-links">
+                <a href="https://farazahammed.blogspot.com/" target="_blank" class="social-link">
+                    <i class="fab fa-blogger"></i>
+                    <span data-i18n="blogText">Blogspot</span>
+                </a>
+                <a href="https://www.instagram.com/faraz_ahammed_cm/" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <span data-i18n="instagramText">Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61555433094253" target="_blank" class="social-link">
+                    <i class="fab fa-facebook"></i>
+                    <span data-i18n="facebookText">Facebook</span>
+                </a>
+                <a href="https://www.linkedin.com/in/faraz-ahammed-cm-69b4b8365" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span data-i18n="linkedinText">LinkedIn</span>
+                </a>
+                <a href="https://wa.me/+919037203595" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-i18n="whatsappText">WhatsApp</span>
+                </a>
+                <a href="https://x.com/@farazahammedcm" target="_blank" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                    <span data-i18n="twitterText">Twitter</span>
+                </a>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-      <p data-i18n="footerCopy">© 2025 Faraz Ahammed CM. All Rights Reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-img">
+                        <img src="https://i.postimg.cc/MGW5pBTs/dp-1.png" alt="Faraz" class="logo-img-inner" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'">
+                    </div>
+                    <span data-i18n="brand">Faraz Ahammed CM</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about" class="footer-link" data-i18n="aboutLink">About</a>
+                    <a href="#profile" class="footer-link" data-i18n="profileLink">Profile</a>
+                    <a href="#connect" class="footer-link" data-i18n="connectLink">Connect</a>
+                </div>
+            </div>
+            <p class="copyright" data-i18n="footerCopy">© 2025 Faraz Ahammed CM. All Rights Reserved.</p>
+        </div>
     </footer>
 
-  </div>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <!-- Back to top -->
-  <button id="backToTop" aria-label="Back to top" title="Back to top" style="position:fixed;right:20px;bottom:20px;padding:12px;border-radius:999px;border:none;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;display:none;box-shadow:0 10px 30px rgba(0,0,0,0.3);z-index:1000;cursor:pointer;transition:var(--transition)">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+    <script>
+        // Burger Menu Functionality
+        const burgerMenu = document.getElementById('burgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLanguageSelector = document.getElementById('mobileLanguageSelector');
+        const mobileThemeSelector = document.getElementById('mobileThemeSelector');
 
-  <script defer>
-    /* ---------- Translations (complete, all text included) ---------- */
-    const translations = {
-      en: {
-        title: "Faraz Ahammed CM | Content Creator & Student",
-        brand: "Faraz Ahammed CM",
-        aboutLink: "About", profileLink: "Profile", highlightsLink: "Highlights", connectLink: "Connect",
-        getInTouch: "Get In Touch", heroName: "Faraz Ahammed CM", heroRole: "Content Creator & Digital Media Professional",
-        heroDesc: "Co-founder of HF Media Malayalam YouTube Channel and official handle of English Daily Shots. Passionate about creating engaging content while pursuing academic excellence.",
-        student: "10th grade student at PMSAPTHSS",
-        contactBtn: "Contact", viewProfileBtn: "View Profile", blogBtn: "Blogspot",
-        profileTitle: "Professional Profile", personalTitle: "Personal Information", nameLabel: "Full Name",
-        nameValue: "Faraz Ahammed CM", genderLabel: "Gender", genderValue: "Male", dobLabel: "Date of Birth",
-        dobValue: "July 18, 2010", emailLabel: "Email", emailValue: "farazahammedcm@gmail.com", phoneLabel: "Contact",
-        phoneValue: "+91 9037203595",
-        professionalBg: "Professional Background", currentRoleLabel: "Current Role", currentRoleValue: "Co-founder of HF Media Malayalam YouTube Channel & Official Handle of English Daily Shots",
-        responsibilitiesLabel: "Primary Responsibilities", responsibilitiesValue: "Content Creation, Video Production, Script Writing, Video Editing, Social Media Management",
-        educationHeading: "Education & Background", currentInstitutionLabel: "Current Institution",
-        currentInstitutionValue: "PMSAPTHSS (10th grade)", previousInstitutionsLabel: "Previous Institutions",
-        previousInstitutionsValue: "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur", previousResidenceLabel: "Previous Residence",
-        previousResidenceValue: "Islahiya Hostel Chennamangallur",
-        contentCreationTitle: "Content Creation", digitalMediaTitle: "Digital Media", professionalSkillsTitle: "Professional Skills",
-        contentSkill1: "Video Production", contentSkill2: "Script Writing", contentSkill3: "Video Editing", contentSkill4: "Storytelling & Idea Development",
-        digitalSkill1: "Social Media Management", digitalSkill2: "YouTube Channel Growth", digitalSkill3: "Content Strategy", digitalSkill4: "Audience Engagement",
-        proSkill1: "Time Management", proSkill2: "Research & Analysis", proSkill3: "Communication", proSkill4: "Continuous Learning",
-        highlightsTitle: "Professional Highlights", connectTitle: "Connect With Me", connectLead: "Let's collaborate or just have a conversation — I'm open for creative projects, collaborations and advice.",
-        highlight1Title: "HF Media Malayalam", highlight1Desc: "Co-founded and actively contributing to a growing YouTube channel focused on quality content creation and community growth.",
-        highlight2Title: "English Daily Shots", highlight2Desc: "Managing the official social presence for a digital English grammar platform — short lessons, concise tips.",
-        highlight3Title: "Academic Pursuits", highlight3Desc: "Balancing content creation with studies — currently in 10th grade at PMSAPTHSS.",
-        blogText: "Blogspot", instagramText: "Instagram", facebookText: "Facebook", linkedinText: "LinkedIn", whatsappText: "WhatsApp", twitterText: "X",
-        footerCopy: "© 2025 Faraz Ahammed CM. All Rights Reserved."
-      },
+        function toggleMobileMenu() {
+            burgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
 
-      ml: {
-        title: "ഫറാസ് അഹമ്മദ് സി.എം | കണ്ടന്റ് ക്രിയേറ്റർ & വിദ്യാർത്ഥി",
-        brand: "ഫറാസ് അഹമ്മദ് സി.എം",
-        aboutLink: "എന്നെക്കുറിച്ച്", profileLink: "പ്രൊഫൈൽ", highlightsLink: "പ്രധാന സംഭവങ്ങൾ", connectLink: "ബന്ധപ്പെടുക",
-        getInTouch: "ബന്ധപ്പെടുക", heroName: "ഫറാസ് അഹമ്മദ് സി.എം", heroRole: "കണ്ടന്റ് ക്രിയേറ്റർ & ഡിജിറ്റൽ മീഡിയ പ്രൊഫഷണൽ",
-        heroDesc: "HF Media Malayalam YouTube ചാനലിന്റെ സഹസ്ഥാപകനും English Daily Shots-ന്റെ ഔദ്യോഗിക ഹാൻഡിലും. പഠനത്തിനും ഉള്ള സമയത്ത് ഉയർന്ന നിലവാരമുള്ള കണ്ടന്റ് നിർമ്മിക്കാൻ താൽപര്യം.",
-        student: "PMSAPTHSS-ൽ 10-ാം ക്ലാസ് വിദ്യാർത്ഥി",
-        contactBtn: "ബന്ധപ്പെടുക", viewProfileBtn: "പ്രൊഫൈൽ കാണുക", blogBtn: "ബ്ലോഗ്സ്പോട്ട്",
-        profileTitle: "പ്രൊഫൈൽ വിവരങ്ങൾ", personalTitle: "വ്യക്തിഗത വിവരങ്ങൾ", nameLabel: "പേര്",
-        nameValue: "ഫറാസ് അഹമ്മദ് സി.എം", genderLabel: "ലിംഗം", genderValue: "പുരുഷൻ", dobLabel: "ജനന തിയതി",
-        dobValue: "18 ജൂലൈ, 2010", emailLabel: "ഇമെയിൽ", emailValue: "farazahammedcm@gmail.com", phoneLabel: "ബന്ധപ്പെടുക",
-        phoneValue: "+91 9037203595",
-        professionalBg: "പ്രൊഫഷണൽ പശ്ചാത്തലം", currentRoleLabel: "നിലവിലെ സ്ഥാനം", currentRoleValue: "HF Media Malayalam YouTube ചാനലിന്റെ സഹസ്ഥാപകൻ & English Daily Shots ഔദ്യോഗിക ഹാൻഡിൽ",
-        responsibilitiesLabel: "പ്രധാന ഉത്തരവാദിത്വങ്ങൾ", responsibilitiesValue: "കണ്ടന്റ് നിർമാണം, വീഡിയൊ പ്രൊഡക്ഷൻ, സ്ക്രിപ്റ്റ്, എഡിറ്റിംഗ്, സോഷ്യൽ മീഡിയ മാനേജ്‌മെന്റ്",
-        educationHeading: "വിദ്യാഭ്യാസം & പശ്ചാത്തലം", currentInstitutionLabel: "നിലവിലെ സ്ഥാപനo",
-        currentInstitutionValue: "PMSAPTHSS (10-ാം ക്ലാസ്)", previousInstitutionsLabel: "മുൻ സ്ഥാപനങ്ങൾ",
-        previousInstitutionsValue: "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur", previousResidenceLabel: "മുൻ താമസം",
-        previousResidenceValue: "Islahiya Hostel Chennamangallur",
-        contentCreationTitle: "കണ്ടന്റ് നിർമാണം", digitalMediaTitle: "ഡിജിറ്റൽ മീഡിയ", professionalSkillsTitle: "പ്രൊഫഷണൽ കഴിവുകൾ",
-        contentSkill1: "വീഡിയോ നിർമ്മാണം", contentSkill2: "സ്ക്രിപ്റ്റ് എഴുത്ത്", contentSkill3: "വീഡിയോ എഡിറ്റിംഗ്", contentSkill4: "കഥാപാത്രങ്ങളും ആശയ വികസനവും",
-        digitalSkill1: "സോഷ്യൽ മീഡിയ മാനേജ്മെന്റ്", digitalSkill2: "യൂട്യൂബ് ചാനൽ വളർച്ച", digitalSkill3: "കണ്ടന്റ് തന്ത്രം", digitalSkill4: "പ്രേക്ഷക ഇടപെടൽ",
-        proSkill1: "സമയ മാനേജ്മെന്റ്", proSkill2: "ഗവേഷണവും വിശകലനവും", proSkill3: "ആശയവിനിമയം", proSkill4: "തുടർച്ചയായ പഠനം",
-        highlightsTitle: "പ്രധാന നേട്ടങ്ങൾ", connectTitle: "എനോട് ബന്ധപ്പെടുക", connectLead: "കൂട്ടായി പ്രവർത്തിക്കാൻ ഒരുങ്ങി — സൃഷ്ടിപരമായ പ്രോജെക്‌ടുകൾക്കും കൂടിച്ചേർന്ന് സഹായത്തിനും തുറന്നിരിക്കുന്നു.",
-        highlight1Title: "HF Media Malayalam", highlight1Desc: "വളർന്നുവരുന്ന ഒരു യൂട്യൂബ് ചാനലിന്റെ സഹസ്ഥാപകൻ, ഗുണനിലവാരമുള്ള കണ്ടന്റ് നിർമ്മാണത്തിലും കമ്മ്യൂണിറ്റി വളർച്ചയിലും സജീവമായി സംഭാവന ചെയ്യുന്നു.",
-        highlight2Title: "English Daily Shots", highlight2Desc: "ഒരു ഡിജിറ്റൽ ഇംഗ്ലീഷ് വ്യാകരണ പ്ലാറ്റ്ഫോമിന്റെ ഔദ്യോഗിക സോഷ്യൽ പ്രസൻസ് നിയന്ത്രിക്കുന്നു — ചെറിയ പാഠങ്ങൾ, സംക്ഷിപ്ത നുറുങ്ങുകൾ.",
-        highlight3Title: "അക്കാദമിക് പഠനം", highlight3Desc: "കണ്ടന്റ് നിർമ്മാണവും പഠനവും തമ്മിൽ സമതുലിതാവസ്ഥ — നിലവിൽ PMSAPTHSS-ൽ 10-ാം ക്ലാസിൽ പഠിക്കുന്നു.",
-        blogText: "ബ്ലോഗ്സ്പോട്ട്", instagramText: "ഇൻസ്റ്റാഗ്രാം", facebookText: "ഫേസ്ബുക്ക്", linkedinText: "ലിങ്ക്ഡ്ഇൻ", whatsappText: "വാട്ട്സ്ആപ്", twitterText: "X",
-        footerCopy: "© 2025 ഫറാസ് അഹമ്മദ് സി.എം. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം."
-      },
+        function closeMobileMenu() {
+            burgerMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
-      hi: {
-        title: "फराज अहम्मद सीएम | कंटेंट क्रिएटर & छात्र",
-        brand: "फराज अहम्मद सीएम",
-        aboutLink: "बारे में", profileLink: "प्रोफ़ाइल", highlightsLink: "मुख्य बिंदु", connectLink: "संपर्क",
-        getInTouch: "संपर्क करें", heroName: "फराज अहम्मद सीएम", heroRole: "कंटेंट क्रिएटर & डिजिटल मीडिया प्रोफेशनल",
-        heroDesc: "HF Media Malayalam YouTube चैनल के सह-स्थापक और English Daily Shots के आधिकारिक हैंडल। पढ़ाई के साथ-साथ क्वालिटी कंटेंट बनाना पसंद है।",
-        student: "PMSAPTHSS में 10वीं कक्षा के छात्र",
-        contactBtn: "संपर्क", viewProfileBtn: "प्रोफ़ाइल देखें", blogBtn: "ब्लॉगस्पॉट",
-        profileTitle: "प्रोफ़ाइल जानकारी", personalTitle: "व्यक्तिगत जानकारी", nameLabel: "पूरा नाम",
-        nameValue: "फराज अहम्मद सीएम", genderLabel: "लिंग", genderValue: "पुरुष", dobLabel: "जन्म तिथि",
-        dobValue: "18 जुलाई, 2010", emailLabel: "ईमेल", emailValue: "farazahammedcm@gmail.com", phoneLabel: "संपर्क",
-        phoneValue: "+91 9037203595",
-        professionalBg: "पेशेवर पृष्ठभूमि", currentRoleLabel: "वर्तमान भूमिका", currentRoleValue: "HF Media Malayalam YouTube चैनल के सह- संस्थापक & English Daily Shots आधिकारिक हैंडल",
-        responsibilitiesLabel: "मुख्य ज़िम्मेदारियां", responsibilitiesValue: "कंटेंट निर्माण, वीडियो प्रोडक्शन, स्क्रिप्ट, एडिटिंग, सोशल मीडिया",
-        educationHeading: "शिक्षा और पृष्ठभूमि", currentInstitutionLabel: "वर्तमान संस्था",
-        currentInstitutionValue: "PMSAPTHSS (10वीं कक्षा)", previousInstitutionsLabel: "पूर्व संस्थाएँ",
-        previousInstitutionsValue: "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur", previousResidenceLabel: "पूर्व आवास",
-        previousResidenceValue: "Islahiya Hostel Chennamangallur",
-        contentCreationTitle: "कंटेंट निर्माण", digitalMediaTitle: "डिजिटल मीडिया", professionalSkillsTitle: "प्रोफेशनल स्किल्स",
-        contentSkill1: "वीडियो प्रोडक्शन", contentSkill2: "स्क्रिप्ट लेखन", contentSkill3: "वीडियो एडिटिंग", contentSkill4: "कहानी कहना और विचार विकास",
-        digitalSkill1: "सोशल मीडिया प्रबंधन", digitalSkill2: "यूट्यूब चैनल विकास", digitalSkill3: "कंटेंट रणनीति", digitalSkill4: "दर्शक जुड़ाव",
-        proSkill1: "समय प्रबंधन", proSkill2: "अनुसंधान और विश्लेषण", proSkill3: "संचार", proSkill4: "निरंतर सीखना",
-        highlightsTitle: "मुख्य उपलब्धियाँ", connectTitle: "मुझसे जुड़ें", connectLead: "आइए मिलकर काम करें — परियोजनाओं और सहयोग के लिए खुला हूं।",
-        highlight1Title: "HF Media Malayalam", highlight1Desc: "एक बढ़ते हुए YouTube चैनल के सह-संस्थापक, गुणवत्तापूर्ण सामग्री निर्माण और समुदाय विकास पर ध्यान केंद्रित कर रहे हैं।",
-        highlight2Title: "English Daily Shots", highlight2Desc: "एक डिजिटल अंग्रेजी व्याकरण प्लेटफॉर्म की आधिकारिक सोशल उपस्थिति प्रबंधित करना — छोटे पाठ, संक्षिप्त सुझाव।",
-        highlight3Title: "शैक्षणिक प्रयास", highlight3Desc: "सामग्री निर्माण और अध्ययन के बीच संतुलन — वर्तमान में PMSAPTHSS में 10वीं कक्षा में।",
-        blogText: "ब्लॉगस्पॉट", instagramText: "इंस्टाग्राम", facebookText: "फेसबुक", linkedinText: "लिंक्डइन", whatsappText: "व्हाट्सएप", twitterText: "X",
-        footerCopy: "© 2025 फराज अहम्मद सीएम. सर्वाधिकार सुरक्षित."
-      },
+        burgerMenu.addEventListener('click', toggleMobileMenu);
 
-      ar: {
-        title: "فراز أحمد سي إم | منشئ محتوى وطالب",
-        brand: "فراز أحمد سي إم",
-        aboutLink: "حول", profileLink: "الملف الشخصي", highlightsLink: "أبرز النقاط", connectLink: "اتصل",
-        getInTouch: "تواصل معي", heroName: "فراز أحمد سي إم", heroRole: "منشئ محتوى ومحترف في الإعلام الرقمي",
-        heroDesc: "الشريك المؤسس لقناة HF Media Malayalam على يوتيوب والمسؤول الرسمي عن English Daily Shots. شغوف بإنشاء محتوى جذاب أثناء متابعة التميز الأكاديمي.",
-        student: "طالب في الصف العاشر في PMSAPTHSS",
-        contactBtn: "اتصال", viewProfileBtn: "عرض الملف", blogBtn: "بلوجسبوت",
-        profileTitle: "الملف المهني", personalTitle: "المعلومات الشخصية", nameLabel: "الاسم الكامل",
-        nameValue: "فراز أحمد سي إم", genderLabel: "الجنس", genderValue: "ذكر", dobLabel: "تاريخ الميلاد",
-        dobValue: "18 يوليو 2010", emailLabel: "البريد الإلكتروني", emailValue: "farazahammedcm@gmail.com", phoneLabel: "اتصال",
-        phoneValue: "+91 9037203595",
-        professionalBg: "الخلفية المهنية", currentRoleLabel: "الدور الحالي", currentRoleValue: "الشريك المؤسس لقناة HF Media Malayalam على يوتيوب والمسؤول الرسمي عن English Daily Shots",
-        responsibilitiesLabel: "المسؤوليات الرئيسية", responsibilitiesValue: "إنشاء المحتوى، إنتاج الفيديو، كتابة النص، تحرير الفيديو، إدارة وسائل التواصل الاجتماعي",
-        educationHeading: "التعليم والخلفية", currentInstitutionLabel: "المؤسسة الحالية",
-        currentInstitutionValue: "PMSAPTHSS (الصف العاشر)", previousInstitutionsLabel: "المؤسسات السابقة",
-        previousInstitutionsValue: "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur", previousResidenceLabel: "مكان الإقامة السابق",
-        previousResidenceValue: "Islahiya Hostel Chennamangallur",
-        contentCreationTitle: "إنشاء المحتوى", digitalMediaTitle: "الإعلام الرقمي", professionalSkillsTitle: "المهارات المهنية",
-        contentSkill1: "إنتاج الفيديو", contentSkill2: "كتابة النص", contentSkill3: "تحرير الفيديو", contentSkill4: "سرد القصص وتطوير الأفكار",
-        digitalSkill1: "إدارة وسائل التواصل الاجتماعي", digitalSkill2: "نمو قناة يوتيوب", digitalSkill3: "استراتيجية المحتوى", digitalSkill4: "تفاعل الجمهور",
-        proSkill1: "إدارة الوقت", proSkill2: "البحث والتحليل", proSkill3: "التواصل", proSkill4: "التعلم المستمر",
-        highlightsTitle: "أبرز الإنجازات المهنية", connectTitle: "تواصل معي", connectLead: "دعنا نتعاون أو نتحدث - أنا متاح للمشاريع الإبداعية والتعاون والنصائح.",
-        highlight1Title: "HF Media Malayalam", highlight1Desc: "الشريك المؤسس لقناة يوتيوب نامية، أساهم بنشاط في إنشاء محتوى عالي الجودة ونمو المجتمع.",
-        highlight2Title: "English Daily Shots", highlight2Desc: "إدارة الوجود الاجتماعي الرسمي لمنصة قواعد اللغة الإنجليزية الرقمية - دروس قصيرة، نصائح موجزة.",
-        highlight3Title: "السعي الأكاديمي", highlight3Desc: "موازنة إنشاء المحتوى مع الدراسة - حالياً في الصف العاشر في PMSAPTHSS.",
-        blogText: "بلوجسبوت", instagramText: "إنستغرام", facebookText: "فيسبوك", linkedinText: "لينكدإن", whatsappText: "واتساب", twitterText: "X",
-        footerCopy: "© 2025 فراز أحمد سي إم. جميع الحقوق محفوظة."
-      },
-
-      sa: {
-        title: "फराज अहम्मद सीएम | सामग्री निर्माता एवं छात्रः",
-        brand: "फराज अहम्मद सीएम",
-        aboutLink: "विषये", profileLink: "प्रोफाइल", highlightsLink: "उल्लेखनीय", connectLink: "संपर्क",
-        getInTouch: "संपर्क कुरु", heroName: "फराज अहम्मद सीएम", heroRole: "सामग्री निर्माता एवं डिजिटल मीडिया व्यावसायिकः",
-        heroDesc: "HF Media Malayalam YouTube चैनलस्य सहसंस्थापकः च English Daily Shots-स्य आधिकारिक हस्तः। अध्ययनसमये रोचकं सामग्री निर्माणं कर्तुं इच्छति।",
-        student: "PMSAPTHSS मध्ये दशम इयत्ता छात्रः",
-        contactBtn: "संपर्क", viewProfileBtn: "प्रोफाइल अवलोकय", blogBtn: "ब्लॉगस्पॉट",
-        profileTitle: "प्रोफाइल विवरण", personalTitle: "व्यक्तिगत जानकारी", nameLabel: "पूर्ण नाम",
-        nameValue: "फराज अहम्मद सीएम", genderLabel: "लिङ्ग:", genderValue: "पुरुषः", dobLabel: "जन्मदिन",
-        dobValue: "18 जुलाई 2010", emailLabel: "ईमेल", emailValue: "farazahammedcm@gmail.com", phoneLabel: "दूरभाष",
-        phoneValue: "+91 9037203595",
-        professionalBg: "व्यावसायिक पृष्ठभूमिः", currentRoleLabel: "वर्तमान भूमिका", currentRoleValue: "HF Media Malayalam YouTube चैनलस्य सहसंस्थापकः एवं English Daily Shots-स्य अधिकारिकः",
-        responsibilitiesLabel: "मुख्यवृत्तयः", responsibilitiesValue: "सामग्रीनिर्माणं, चलचित्रनिर्माणं, स्क्रिप्टलेखन, सम्पादनम्, सामाजिकमाध्यमप्रबंधः",
-        educationHeading: "शिक्षा च पृष्ठभूमिः", currentInstitutionLabel: "वर्तमान संस्था",
-        currentInstitutionValue: "PMSAPTHSS (10वीं कक्षा)", previousInstitutionsLabel: "पूर्व संस्थाः",
-        previousInstitutionsValue: "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur", previousResidenceLabel: "पूर्ववासः",
-        previousResidenceValue: "Islahiya Hostel Chennamangallur",
-        contentCreationTitle: "सामग्रीनिर्माणम्", digitalMediaTitle: "डिजिटल मीडिया", professionalSkillsTitle: "व्यावसायिक कौशलाः",
-        contentSkill1: "चलचित्रनिर्माणम्", contentSkill2: "स्क्रिप्टलेखन", contentSkill3: "चलचित्रसम्पादनम्", contentSkill4: "कथावाचनं च विचारविकासः",
-        digitalSkill1: "सामाजिकमाध्यमप्रबंधः", digitalSkill2: "यूट्यूबचैनलविकासः", digitalSkill3: "सामग्रीरणनीतिः", digitalSkill4: "दर्शकसंलग्नता",
-        proSkill1: "समयप्रबंधनम्", proSkill2: "अनुसंधानं च विश्लेषणम्", proSkill3: "संचारः", proSkill4: "निरंतरअध्ययनम्",
-        highlightsTitle: "प्रमुख उपलब्धयः", connectTitle: "सम्पर्कं कुर्वीत", connectLead: "सहकार्याय योजनासु वा सामान्यसंवादाय उपलब्धः अस्मि।",
-        highlight1Title: "HF Media Malayalam", highlight1Desc: "वर्धमानस्य YouTube चैनलस्य सहसंस्थापकः, उत्कृष्टसामग्रीनिर्माणे सामुदायिकविकासे च सक्रिययोगदानं करोति।",
-        highlight2Title: "English Daily Shots", highlight2Desc: "डिजिटलइंग्लिशव्याकरणप्लॅटफॉर्मस्य आधिकारिकसामाजिकउपस्थितिं प्रबध्नाति — लघुपाठाः, संक्षिप्तसूचनाः।",
-        highlight3Title: "शैक्षणिकप्रयत्नाः", highlight3Desc: "सामग्रीनिर्माणं अध्ययनं च समतोलयति — वर्तमाने PMSAPTHSS मध्ये दशम इयत्तायाम्।",
-        blogText: "ब्लॉगस्पॉट", instagramText: "इंस्टाग्राम", facebookText: "फेसबुक", linkedinText: "लिंक्डइन", whatsappText: "व्हाट्सएप", twitterText: "X",
-        footerCopy: "© 2025 फराज अहम्मद सीएम. सर्वे अधिकाराः सुरक्षिताः."
-      }
-    };
-
-    /* ---------- Utility: update language ---------- */
-    const languageSelector = document.getElementById('language-selector');
-    function updateLanguage(lang){
-      if(!translations[lang]) lang = 'en';
-      const dict = translations[lang];
-      // update document lang attribute for accessibility
-      document.documentElement.lang = lang;
-
-      // find all data-i18n elements and set text
-      Object.keys(dict).forEach(key => {
-        document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
-          el.textContent = dict[key];
+        // Close menu when clicking on backdrop
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
         });
-      });
-      // Save preference
-      localStorage.setItem('siteLanguage', lang);
-    }
 
-    /* ---------- On load: apply saved language ---------- */
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('siteLanguage') || 'en';
-      languageSelector.value = saved;
-      updateLanguage(saved);
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
 
-      // show small entrance animations
-      window.setTimeout(() => document.querySelectorAll('.fade-up').forEach((el,i)=>el.classList.add('show')), 80);
-    });
+        // Complete translations for all languages
+        const translations = {
+            en: {
+                // Page Title
+                "title": "Faraz Ahammed CM | Content Creator & Student",
+                
+                // Navigation & Header
+                "brand": "Faraz Ahammed CM",
+                "aboutLink": "About",
+                "profileLink": "Profile",
+                "skillsLink": "Skills",
+                "highlightsLink": "Highlights",
+                "connectLink": "Connect",
+                "getInTouch": "Get In Touch",
+                
+                // Hero Section
+                "student": "10th Grade Student at PMSAPTHSS",
+                "heroName": "Faraz Ahammed CM",
+                "heroRole": "Content Creator & Digital Media Professional",
+                "heroDesc": "Co-founder of HF Media Malayalam YouTube Channel and official handle of English Daily Shots. Passionate about creating engaging content while pursuing academic excellence.",
+                "contactBtn": "Contact Me",
+                "viewProfileBtn": "View Profile",
+                
+                // Profile Section
+                "profileTitle": "Professional Profile",
+                "personalTitle": "Personal Information",
+                "nameLabel": "Full Name",
+                "nameValue": "Faraz Ahammed CM",
+                "genderLabel": "Gender",
+                "genderValue": "Male",
+                "dobLabel": "Date of Birth",
+                "dobValue": "July 18, 2010",
+                "emailLabel": "Email",
+                "emailValue": "farazahammedcm@gmail.com",
+                "phoneLabel": "Contact",
+                "phoneValue": "+91 9037203595",
+                "professionalBg": "Professional Background",
+                "currentRoleLabel": "Current Role",
+                "currentRoleValue": "Co-founder of HF Media Malayalam YouTube Channel & Official Handle of English Daily Shots",
+                "responsibilitiesLabel": "Primary Responsibilities",
+                "responsibilitiesValue": "Content Creation, Video Production, Script Writing, Video Editing, Social Media Management",
+                "educationHeading": "Education & Background",
+                "currentInstitutionLabel": "Current Institution",
+                "currentInstitutionValue": "PMSAPTHSS (10th grade)",
+                "previousInstitutionsLabel": "Previous Institutions",
+                "previousInstitutionsValue": "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur",
+                "previousResidenceLabel": "Previous Residence",
+                "previousResidenceValue": "Islahiya Hostel Chennamangallur",
+                
+                // Skills Section
+                "skillsTitle": "Skills & Expertise",
+                "contentCreationTitle": "Content Creation",
+                "digitalMediaTitle": "Digital Media",
+                "professionalSkillsTitle": "Professional Skills",
+                "contentSkill1": "Video Production",
+                "contentSkill2": "Script Writing",
+                "contentSkill3": "Video Editing",
+                "contentSkill4": "Storytelling & Idea Development",
+                "digitalSkill1": "Social Media Management",
+                "digitalSkill2": "YouTube Channel Growth",
+                "digitalSkill3": "Content Strategy",
+                "digitalSkill4": "Audience Engagement",
+                "proSkill1": "Time Management",
+                "proSkill2": "Research & Analysis",
+                "proSkill3": "Communication",
+                "proSkill4": "Continuous Learning",
+                
+                // Highlights Section
+                "highlightsTitle": "Professional Highlights",
+                "highlight1Title": "HF Media Malayalam",
+                "highlight1Desc": "Co-founded and actively contributing to a growing YouTube channel focused on quality content creation and community growth.",
+                "highlight2Title": "English Daily Shots",
+                "highlight2Desc": "Managing the official social presence for a digital English grammar platform — short lessons, concise tips.",
+                "highlight3Title": "Academic Pursuits",
+                "highlight3Desc": "Balancing content creation with studies — currently in 10th grade at PMSAPTHSS.",
+                
+                // Connect Section
+                "connectTitle": "Connect With Me",
+                "connectLead": "Let's collaborate or just have a conversation — I'm open for creative projects, collaborations and advice.",
+                "blogText": "Blogspot",
+                "instagramText": "Instagram",
+                "facebookText": "Facebook",
+                "linkedinText": "LinkedIn",
+                "whatsappText": "WhatsApp",
+                "twitterText": "Twitter",
+                
+                // Footer
+                "footerCopy": "© 2025 Faraz Ahammed CM. All Rights Reserved."
+            },
 
-    languageSelector.addEventListener('change', (e)=> updateLanguage(e.target.value));
+            ml: {
+                "title": "ഫറാസ് അഹമ്മദ് സി.എം | കണ്ടന്റ് ക്രിയേറ്റർ & വിദ്യാർത്ഥി",
+                "brand": "ഫറാസ് അഹമ്മദ് സി.എം",
+                "aboutLink": "എന്നെക്കുറിച്ച്",
+                "profileLink": "പ്രൊഫൈൽ",
+                "skillsLink": "കഴിവുകൾ",
+                "highlightsLink": "പ്രധാന സംഭവങ്ങൾ",
+                "connectLink": "ബന്ധപ്പെടുക",
+                "getInTouch": "ബന്ധപ്പെടുക",
+                "student": "PMSAPTHSS-ൽ 10-ാം ക്ലാസ് വിദ്യാർത്ഥി",
+                "heroName": "ഫറാസ് അഹമ്മദ് സി.എം",
+                "heroRole": "കണ്ടന്റ് ക്രിയേറ്റർ & ഡിജിറ്റൽ മീഡിയ പ്രൊഫഷണൽ",
+                "heroDesc": "HF Media Malayalam YouTube ചാനലിന്റെ സഹസ്ഥാപകനും English Daily Shots-ന്റെ ഔദ്യോഗിക ഹാൻഡിലും. പഠനത്തിനും ഉള്ള സമയത്ത് ഉയർന്ന നിലവാരമുള്ള കണ്ടന്റ് നിർമ്മിക്കാൻ താൽപര്യം.",
+                "contactBtn": "ബന്ധപ്പെടുക",
+                "viewProfileBtn": "പ്രൊഫൈൽ കാണുക",
+                "profileTitle": "പ്രൊഫൈൽ വിവരങ്ങൾ",
+                "personalTitle": "വ്യക്തിഗത വിവരങ്ങൾ",
+                "nameLabel": "പേര്",
+                "nameValue": "ഫറാസ് അഹമ്മദ് സി.എം",
+                "genderLabel": "ലിംഗം",
+                "genderValue": "പുരുഷൻ",
+                "dobLabel": "ജനന തിയതി",
+                "dobValue": "18 ജൂലൈ, 2010",
+                "emailLabel": "ഇമെയിൽ",
+                "emailValue": "farazahammedcm@gmail.com",
+                "phoneLabel": "ബന്ധപ്പെടുക",
+                "phoneValue": "+91 9037203595",
+                "professionalBg": "പ്രൊഫഷണൽ പശ്ചാത്തലം",
+                "currentRoleLabel": "നിലവിലെ സ്ഥാനം",
+                "currentRoleValue": "HF Media Malayalam YouTube ചാനലിന്റെ സഹസ്ഥാപകൻ & English Daily Shots ഔദ്യോഗിക ഹാൻഡിൽ",
+                "responsibilitiesLabel": "പ്രധാന ഉത്തരവാദിത്വങ്ങൾ",
+                "responsibilitiesValue": "കണ്ടന്റ് നിർമാണം, വീഡിയൊ പ്രൊഡക്ഷൻ, സ്ക്രിപ്റ്റ്, എഡിറ്റിംഗ്, സോഷ്യൽ മീഡിയ മാനേജ്‌മെന്റ്",
+                "educationHeading": "വിദ്യാഭ്യാസം & പശ്ചാത്തലം",
+                "currentInstitutionLabel": "നിലവിലെ സ്ഥാപനം",
+                "currentInstitutionValue": "PMSAPTHSS (10-ാം ക്ലാസ്)",
+                "previousInstitutionsLabel": "മുൻ സ്ഥാപനങ്ങൾ",
+                "previousInstitutionsValue": "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur",
+                "previousResidenceLabel": "മുൻ താമസം",
+                "previousResidenceValue": "Islahiya Hostel Chennamangallur",
+                "skillsTitle": "കഴിവുകൾ & വൈദഗ്ധ്യം",
+                "contentCreationTitle": "കണ്ടന്റ് നിർമാണം",
+                "digitalMediaTitle": "ഡിജിറ്റൽ മീഡിയ",
+                "professionalSkillsTitle": "പ്രൊഫഷണൽ കഴിവുകൾ",
+                "contentSkill1": "വീഡിയോ നിർമ്മാണം",
+                "contentSkill2": "സ്ക്രിപ്റ്റ് എഴുത്ത്",
+                "contentSkill3": "വീഡിയോ എഡിറ്റിംഗ്",
+                "contentSkill4": "കഥാപാത്രങ്ങളും ആശയ വികസനവും",
+                "digitalSkill1": "സോഷ്യൽ മീഡിയ മാനേജ്മെന്റ്",
+                "digitalSkill2": "യൂട്യൂബ് ചാനൽ വളർച്ച",
+                "digitalSkill3": "കണ്ടന്റ് തന്ത്രം",
+                "digitalSkill4": "പ്രേക്ഷക ഇടപെടൽ",
+                "proSkill1": "സമയ മാനേജ്മെന്റ്",
+                "proSkill2": "ഗവേഷണവും വിശകലനവും",
+                "proSkill3": "ആശയവിനിമയം",
+                "proSkill4": "തുടർച്ചയായ പഠനം",
+                "highlightsTitle": "പ്രധാന നേട്ടങ്ങൾ",
+                "highlight1Title": "HF Media Malayalam",
+                "highlight1Desc": "വളർന്നുവരുന്ന ഒരു യൂട്യൂബ് ചാനലിന്റെ സഹസ്ഥാപകൻ, ഗുണനിലവാരമുള്ള കണ്ടന്റ് നിർമ്മാണത്തിലും കമ്മ്യൂണിറ്റി വളർച്ചയിലും സജീവമായി സംഭാവന ചെയ്യുന്നു.",
+                "highlight2Title": "English Daily Shots",
+                "highlight2Desc": "ഒരു ഡിജിറ്റൽ ഇംഗ്ലീഷ് വ്യാകരണ പ്ലാറ്റ്ഫോമിന്റെ ഔദ്യോഗിക സോഷ്യൽ പ്രസൻസ് നിയന്ത്രിക്കുന്നു — ചെറിയ പാഠങ്ങൾ, സംക്ഷിപ്ത നുറുങ്ങുകൾ.",
+                "highlight3Title": "അക്കാദമിക് പഠനം",
+                "highlight3Desc": "കണ്ടന്റ് നിർമ്മാണവും പഠനവും തമ്മിൽ സമതുലിതാവസ്ഥ — നിലവിൽ PMSAPTHSS-ൽ 10-ാം ക്ലാസിൽ പഠിക്കുന്നു.",
+                "connectTitle": "എനോട് ബന്ധപ്പെടുക",
+                "connectLead": "കൂട്ടായി പ്രവർത്തിക്കാൻ ഒരുങ്ങി — സൃഷ്ടിപരമായ പ്രോജെക്‌ടുകൾക്കും കൂടിച്ചേർന്ന് സഹായത്തിനും തുറന്നിരിക്കുന്നു.",
+                "blogText": "ബ്ലോഗ്സ്പോട്ട്",
+                "instagramText": "ഇൻസ്റ്റാഗ്രാം",
+                "facebookText": "ഫേസ്ബുക്ക്",
+                "linkedinText": "ലിങ്ക്ഡ്ഇൻ",
+                "whatsappText": "വാട്ട്സ്ആപ്",
+                "twitterText": "X",
+                "footerCopy": "© 2025 ഫറാസ് അഹമ്മദ് സി.എം. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം."
+            },
 
-    /* ---------- Theme toggle ---------- */
-    const themeToggle = document.getElementById('theme-toggle');
-    function applyTheme(theme){
-      if(theme === 'dark') { 
-        document.documentElement.setAttribute('data-theme','dark'); 
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; 
-      }
-      else if(theme === 'light') { 
-        document.documentElement.setAttribute('data-theme','light'); 
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; 
-      }
-      else { 
-        document.documentElement.removeAttribute('data-theme'); 
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; 
-      }
-      localStorage.setItem('siteTheme', theme || 'light');
-    }
-    // init theme
-    const savedTheme = localStorage.getItem('siteTheme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
-    themeToggle.addEventListener('click', ()=> {
-      if(document.documentElement.hasAttribute('data-theme') && document.documentElement.getAttribute('data-theme') === 'dark') {
-        applyTheme('light');
-      } else {
-        applyTheme('dark');
-      }
-    });
+            hi: {
+                "title": "फराज अहम्मद सीएम | कंटेंट क्रिएटर & छात्र",
+                "brand": "फराज अहम्मद सीएम",
+                "aboutLink": "बारे में",
+                "profileLink": "प्रोफ़ाइल",
+                "skillsLink": "कौशल",
+                "highlightsLink": "मुख्य बिंदु",
+                "connectLink": "संपर्क",
+                "getInTouch": "संपर्क करें",
+                "student": "PMSAPTHSS में 10वीं कक्षा के छात्र",
+                "heroName": "फराज अहम्मद सीएम",
+                "heroRole": "कंटेंट क्रिएटर & डिजिटल मीडिया प्रोफेशनल",
+                "heroDesc": "HF Media Malayalam YouTube चैनल के सह-स्थापक और English Daily Shots के आधिकारिक हैंडल। पढ़ाई के साथ-साथ क्वालिटी कंटेंट बनाना पसंद है।",
+                "contactBtn": "संपर्क",
+                "viewProfileBtn": "प्रोफ़ाइल देखें",
+                "profileTitle": "प्रोफ़ाइल जानकारी",
+                "personalTitle": "व्यक्तिगत जानकारी",
+                "nameLabel": "पूरा नाम",
+                "nameValue": "फराज अहम्मद सीएम",
+                "genderLabel": "लिंग",
+                "genderValue": "पुरुष",
+                "dobLabel": "जन्म तिथि",
+                "dobValue": "18 जुलाई, 2010",
+                "emailLabel": "ईमेल",
+                "emailValue": "farazahammedcm@gmail.com",
+                "phoneLabel": "संपर्क",
+                "phoneValue": "+91 9037203595",
+                "professionalBg": "पेशेवर पृष्ठभूमि",
+                "currentRoleLabel": "वर्तमान भूमिका",
+                "currentRoleValue": "HF Media Malayalam YouTube चैनल के सह- संस्थापक & English Daily Shots आधिकारिक हैंडल",
+                "responsibilitiesLabel": "मुख्य ज़िम्मेदारियां",
+                "responsibilitiesValue": "कंटेंट निर्माण, वीडियो प्रोडक्शन, स्क्रिप्ट, एडिटिंग, सोशल मीडिया",
+                "educationHeading": "शिक्षा और पृष्ठभूमि",
+                "currentInstitutionLabel": "वर्तमान संस्था",
+                "currentInstitutionValue": "PMSAPTHSS (10वीं कक्षा)",
+                "previousInstitutionsLabel": "पूर्व संस्थाएँ",
+                "previousInstitutionsValue": "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur",
+                "previousResidenceLabel": "पूर्व आवास",
+                "previousResidenceValue": "Islahiya Hostel Chennamangallur",
+                "skillsTitle": "कौशल और विशेषज्ञता",
+                "contentCreationTitle": "कंटेंट निर्माण",
+                "digitalMediaTitle": "डिजिटल मीडिया",
+                "professionalSkillsTitle": "प्रोफेशनल स्किल्स",
+                "contentSkill1": "वीडियो प्रोडक्शन",
+                "contentSkill2": "स्क्रिप्ट लेखन",
+                "contentSkill3": "वीडियो एडिटिंग",
+                "contentSkill4": "कहानी कहना और विचार विकास",
+                "digitalSkill1": "सोशल मीडिया प्रबंधन",
+                "digitalSkill2": "यूट्यूब चैनल विकास",
+                "digitalSkill3": "कंटेंट रणनीति",
+                "digitalSkill4": "दर्शक जुड़ाव",
+                "proSkill1": "समय प्रबंधन",
+                "proSkill2": "अनुसंधान और विश्लेषण",
+                "proSkill3": "संचार",
+                "proSkill4": "निरंतर सीखना",
+                "highlightsTitle": "मुख्य उपलब्धियाँ",
+                "highlight1Title": "HF Media Malayalam",
+                "highlight1Desc": "एक बढ़ते हुए YouTube चैनल के सह-संस्थापक, गुणवत्तापूर्ण सामग्री निर्माण और समुदाय विकास पर ध्यान केंद्रित कर रहे हैं।",
+                "highlight2Title": "English Daily Shots",
+                "highlight2Desc": "एक डिजिटल अंग्रेजी व्याकरण प्लेटफॉर्म की आधिकारिक सोशल उपस्थिति प्रबंधित करना — छोटे पाठ, संक्षिप्त सुझाव।",
+                "highlight3Title": "शैक्षणिक प्रयास",
+                "highlight3Desc": "सामग्री निर्माण और अध्ययन के बीच संतुलन — वर्तमान में PMSAPTHSS में 10वीं कक्षा में।",
+                "connectTitle": "मुझसे जुड़ें",
+                "connectLead": "आइए मिलकर काम करें — परियोजनाओं और सहयोग के लिए खुला हूं।",
+                "blogText": "ब्लॉगस्पॉट",
+                "instagramText": "इंस्टाग्राम",
+                "facebookText": "फेसबुक",
+                "linkedinText": "लिंक्डइन",
+                "whatsappText": "व्हाट्सएप",
+                "twitterText": "X",
+                "footerCopy": "© 2025 फराज अहम्मद सीएम. सर्वाधिकार सुरक्षित."
+            },
 
-    /* ---------- Back to top button ---------- */
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', ()=> {
-      if(window.scrollY > 300) backToTop.style.display = 'block';
-      else backToTop.style.display = 'none';
-    });
-    backToTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+            ar: {
+                "title": "فراز أحمد سي إم | منشئ محتوى وطالب",
+                "brand": "فراز أحمد سي إم",
+                "aboutLink": "حول",
+                "profileLink": "الملف الشخصي",
+                "skillsLink": "المهارات",
+                "highlightsLink": "أبرز النقاط",
+                "connectLink": "اتصل",
+                "getInTouch": "تواصل معي",
+                "student": "طالب في الصف العاشر في PMSAPTHSS",
+                "heroName": "فراز أحمد سي إم",
+                "heroRole": "منشئ محتوى ومحترف في الإعلام الرقمي",
+                "heroDesc": "الشريك المؤسس لقناة HF Media Malayalam على يوتيوب والمسؤول الرسمي عن English Daily Shots. شغوف بإنشاء محتوى جذاب أثناء متابعة التميز الأكاديمي.",
+                "contactBtn": "اتصال",
+                "viewProfileBtn": "عرض الملف",
+                "profileTitle": "الملف المهني",
+                "personalTitle": "المعلومات الشخصية",
+                "nameLabel": "الاسم الكامل",
+                "nameValue": "فراز أحمد سي إم",
+                "genderLabel": "الجنس",
+                "genderValue": "ذكر",
+                "dobLabel": "تاريخ الميلاد",
+                "dobValue": "18 يوليو 2010",
+                "emailLabel": "البريد الإلكتروني",
+                "emailValue": "farazahammedcm@gmail.com",
+                "phoneLabel": "اتصال",
+                "phoneValue": "+91 9037203595",
+                "professionalBg": "الخلفية المهنية",
+                "currentRoleLabel": "الدور الحالي",
+                "currentRoleValue": "الشريك المؤسس لقناة HF Media Malayalam على يوتيوب والمسؤول الرسمي عن English Daily Shots",
+                "responsibilitiesLabel": "المسؤوليات الرئيسية",
+                "responsibilitiesValue": "إنشاء المحتوى، إنتاج الفيديو، كتابة النص، تحرير الفيديو، إدارة وسائل التواصل الاجتماعي",
+                "educationHeading": "التعليم والخلفية",
+                "currentInstitutionLabel": "المؤسسة الحالية",
+                "currentInstitutionValue": "PMSAPTHSS (الصف العاشر)",
+                "previousInstitutionsLabel": "المؤسسات السابقة",
+                "previousInstitutionsValue": "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur",
+                "previousResidenceLabel": "مكان الإقامة السابق",
+                "previousResidenceValue": "Islahiya Hostel Chennamangallur",
+                "skillsTitle": "المهارات والخبرة",
+                "contentCreationTitle": "إنشاء المحتوى",
+                "digitalMediaTitle": "الإعلام الرقمي",
+                "professionalSkillsTitle": "المهارات المهنية",
+                "contentSkill1": "إنتاج الفيديو",
+                "contentSkill2": "كتابة النص",
+                "contentSkill3": "تحرير الفيديو",
+                "contentSkill4": "سرد القصص وتطوير الأفكار",
+                "digitalSkill1": "إدارة وسائل التواصل الاجتماعي",
+                "digitalSkill2": "نمو قناة يوتيوب",
+                "digitalSkill3": "استراتيجية المحتوى",
+                "digitalSkill4": "تفاعل الجمهور",
+                "proSkill1": "إدارة الوقت",
+                "proSkill2": "البحث والتحليل",
+                "proSkill3": "التواصل",
+                "proSkill4": "التعلم المستمر",
+                "highlightsTitle": "أبرز الإنجازات المهنية",
+                "highlight1Title": "HF Media Malayalam",
+                "highlight1Desc": "الشريك المؤسس لقناة يوتيوب نامية، أساهم بنشاط في إنشاء محتوى عالي الجودة ونمو المجتمع.",
+                "highlight2Title": "English Daily Shots",
+                "highlight2Desc": "إدارة الوجود الاجتماعي الرسمي لمنصة قواعد اللغة الإنجليزية الرقمية - دروس قصيرة، نصائح موجزة.",
+                "highlight3Title": "السعي الأكاديمي",
+                "highlight3Desc": "موازنة إنشاء المحتوى مع الدراسة - حالياً في الصف العاشر في PMSAPTHSS.",
+                "connectTitle": "تواصل معي",
+                "connectLead": "دعنا نتعاون أو نتحدث - أنا متاح للمشاريع الإبداعية والتعاون والنصائح.",
+                "blogText": "بلوجسبوت",
+                "instagramText": "إنستغرام",
+                "facebookText": "فيسبوك",
+                "linkedinText": "لينكدإن",
+                "whatsappText": "واتساب",
+                "twitterText": "X",
+                "footerCopy": "© 2025 فراز أحمد سي إم. جميع الحقوق محفوظة."
+            },
 
-    /* ---------- Simple intersection reveal for fade-up ---------- */
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, {threshold: 0.12});
-    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
-  </script>
+            sa: {
+                "title": "फराज अहम्मद सीएम | सामग्री निर्माता एवं छात्रः",
+                "brand": "फराज अहम्मद सीएम",
+                "aboutLink": "विषये",
+                "profileLink": "प्रोफाइल",
+                "skillsLink": "कौशलम्",
+                "highlightsLink": "उल्लेखनीय",
+                "connectLink": "संपर्क",
+                "getInTouch": "संपर्क कुरु",
+                "student": "PMSAPTHSS मध्ये दशम इयत्ता छात्रः",
+                "heroName": "फराज अहम्मद सीएम",
+                "heroRole": "सामग्री निर्माता एवं डिजिटल मीडिया व्यावसायिकः",
+                "heroDesc": "HF Media Malayalam YouTube चैनलस्य सहसंस्थापकः च English Daily Shots-स्य आधिकारिक हस्तः। अध्ययनसमये रोचकं सामग्री निर्माणं कर्तुं इच्छति।",
+                "contactBtn": "संपर्क",
+                "viewProfileBtn": "प्रोफाइल अवलोकय",
+                "profileTitle": "प्रोफाइल विवरण",
+                "personalTitle": "व्यक्तिगत जानकारी",
+                "nameLabel": "पूर्ण नाम",
+                "nameValue": "फराज अहम्मद सीएम",
+                "genderLabel": "लिङ्गः",
+                "genderValue": "पुरुषः",
+                "dobLabel": "जन्मदिन",
+                "dobValue": "18 जुलाई 2010",
+                "emailLabel": "ईमेल",
+                "emailValue": "farazahammedcm@gmail.com",
+                "phoneLabel": "दूरभाष",
+                "phoneValue": "+91 9037203595",
+                "professionalBg": "व्यावसायिक पृष्ठभूमिः",
+                "currentRoleLabel": "वर्तमान भूमिका",
+                "currentRoleValue": "HF Media Malayalam YouTube चैनलस्य सहसंस्थापकः एवं English Daily Shots-स्य अधिकारिकः",
+                "responsibilitiesLabel": "मुख्यवृत्तयः",
+                "responsibilitiesValue": "सामग्रीनिर्माणं, चलचित्रनिर्माणं, स्क्रिप्टलेखन, सम्पादनम्, सामाजिकमाध्यमप्रबंधः",
+                "educationHeading": "शिक्षा च पृष्ठभूमिः",
+                "currentInstitutionLabel": "वर्तमान संस्था",
+                "currentInstitutionValue": "PMSAPTHSS (10वीं कक्षा)",
+                "previousInstitutionsLabel": "पूर्व संस्थाः",
+                "previousInstitutionsValue": "K.D.U.E.M.S Vazhakkad, C.M.R.H.S.S Chennamangallur",
+                "previousResidenceLabel": "पूर्ववासः",
+                "previousResidenceValue": "Islahiya Hostel Chennamangallur",
+                "skillsTitle": "कौशलं च विशेषज्ञता",
+                "contentCreationTitle": "सामग्रीनिर्माणम्",
+                "digitalMediaTitle": "डिजिटल मीडिया",
+                "professionalSkillsTitle": "व्यावसायिक कौशलाः",
+                "contentSkill1": "चलचित्रनिर्माणम्",
+                "contentSkill2": "स्क्रिप्टलेखन",
+                "contentSkill3": "चलचित्रसम्पादनम्",
+                "contentSkill4": "कथावाचनं च विचारविकासः",
+                "digitalSkill1": "सामाजिकमाध्यमप्रबंधः",
+                "digitalSkill2": "यूट्यूबचैनलविकासः",
+                "digitalSkill3": "सामग्रीरणनीतिः",
+                "digitalSkill4": "दर्शकसंलग्नता",
+                "proSkill1": "समयप्रबंधनम्",
+                "proSkill2": "अनुसंधानं च विश्लेषणम्",
+                "proSkill3": "संचारः",
+                "proSkill4": "निरंतरअध्ययनम्",
+                "highlightsTitle": "प्रमुख उपलब्धयः",
+                "highlight1Title": "HF Media Malayalam",
+                "highlight1Desc": "वर्धमानस्य YouTube चैनलस्य सहसंस्थापकः, उत्कृष्टसामग्रीनिर्माणे सामुदायिकविकासे च सक्रिययोगदानं करोति।",
+                "highlight2Title": "English Daily Shots",
+                "highlight2Desc": "डिजिटलइंग्लिशव्याकरणप्लॅटफॉर्मस्य आधिकारिकसामाजिकउपस्थितिं प्रबध्नाति — लघुपाठाः, संक्षिप्तसूचनाः।",
+                "highlight3Title": "शैक्षणिकप्रयत्नाः",
+                "highlight3Desc": "सामग्रीनिर्माणं अध्ययनं च समतोलयति — वर्तमाने PMSAPTHSS मध्ये दशम इयत्तायाम्।",
+                "connectTitle": "सम्पर्कं कुर्वीत",
+                "connectLead": "सहकार्याय योजनासु वा सामान्यसंवादाय उपलब्धः अस्मि।",
+                "blogText": "ब्लॉगस्पॉट",
+                "instagramText": "इंस्टाग्राम",
+                "facebookText": "फेसबुक",
+                "linkedinText": "लिंक्डइन",
+                "whatsappText": "व्हाट्सएप",
+                "twitterText": "X",
+                "footerCopy": "© 2025 फराज अहम्मद सीएम. सर्वे अधिकाराः सुरक्षिताः."
+            }
+        };
+
+        // Language Management
+        const languageSelector = document.getElementById('languageSelector');
+        
+        function updateLanguage(lang) {
+            if (!translations[lang]) lang = 'en';
+            const dict = translations[lang];
+            
+            // Update document language and direction
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+            
+            // Update all elements with data-i18n attribute
+            Object.keys(dict).forEach(key => {
+                document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+                    el.textContent = dict[key];
+                });
+            });
+            
+            // Update selectors
+            languageSelector.value = lang;
+            mobileLanguageSelector.value = lang;
+            
+            // Save preference
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        // Theme Management
+        const themeSelector = document.getElementById('themeSelector');
+        
+        function updateTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeSelector.value = theme;
+            mobileThemeSelector.value = theme;
+            localStorage.setItem('selectedTheme', theme);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load saved language
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            updateLanguage(savedLang);
+            
+            // Load saved theme
+            const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+            updateTheme(savedTheme);
+            
+            // Show animations
+            window.setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach((el, i) => {
+                    el.classList.add('visible');
+                });
+            }, 80);
+        });
+
+        // Event listeners
+        languageSelector.addEventListener('change', (e) => updateLanguage(e.target.value));
+        mobileLanguageSelector.addEventListener('change', (e) => updateLanguage(e.target.value));
+        themeSelector.addEventListener('change', (e) => updateTheme(e.target.value));
+        mobileThemeSelector.addEventListener('change', (e) => updateTheme(e.target.value));
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Fade-in Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(30, 41, 59, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'rgba(30, 41, 59, 0.8)';
+                header.style.backdropFilter = 'blur(20px)';
+            }
+        });
+
+        // Profile picture fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileImages = document.querySelectorAll('img');
+            profileImages.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
