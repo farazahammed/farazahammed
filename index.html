@@ -296,6 +296,13 @@
       color:var(--muted);
     }
 
+    /* Professional Profile Cards - 1 per row on mobile */
+    @media (max-width: 768px) {
+      #profile .card-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
     /* highlights */
     .highlights{
       display:flex;
