@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Faraz Ahammed CM | Content Creator & Digital Media Professional</title>
+    <title>Faraz Ahammed CM | Content Creator & Digital Media Professional</title>
     <link rel="icon" href="https://i.postimg.cc/MGW5pBTs/dp-1.png" type="image/png">
     
     <!-- Font Awesome -->
@@ -108,7 +108,7 @@
             padding: 0 20px;
         }
 
-        /* Header - Burger Menu */
+        /* Header with Hide/Show on Scroll */
         header {
             position: fixed;
             top: 20px;
@@ -122,6 +122,20 @@
             border-radius: var(--radius);
             z-index: 1000;
             padding: 15px 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+        }
+
+        header.hidden {
+            transform: translateX(-50%) translateY(-100px);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        header.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            pointer-events: all;
         }
 
         .nav {
@@ -141,6 +155,11 @@
             font-size: 1.3rem;
             flex-shrink: 0;
             z-index: 1001;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo-img {
@@ -152,6 +171,7 @@
             background: var(--gradient);
             padding: 2px;
             flex-shrink: 0;
+            transition: var(--transition);
         }
 
         .logo-img-inner {
@@ -162,14 +182,14 @@
             border: 1px solid var(--border);
         }
 
-        /* Improved Burger Menu Styles */
+        /* Premium Burger Menu */
         .burger-menu {
             display: flex;
             flex-direction: column;
             gap: 5px;
             background: var(--glass);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             padding: 12px 10px;
             z-index: 1001;
@@ -178,6 +198,21 @@
             height: 50px;
             justify-content: center;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .burger-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
         }
 
         .burger-line {
@@ -190,8 +225,12 @@
         }
 
         .burger-menu.active {
-            background: var(--primary);
-            border-color: var(--primary);
+            background: transparent;
+            border-color: transparent;
+        }
+
+        .burger-menu.active::before {
+            opacity: 1;
         }
 
         .burger-menu.active .burger-line {
@@ -211,22 +250,181 @@
         }
 
         .burger-menu:hover {
-            background: var(--primary);
-            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .burger-menu:hover::before {
+            opacity: 1;
         }
 
         .burger-menu:hover .burger-line {
             background: white;
         }
 
-        /* Improved Mobile Menu */
+        /* Custom Selectors */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .selector-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .selector-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            min-width: 120px;
+        }
+
+        .selector-button:hover {
+            background: var(--glass);
+            transform: translateY(-2px);
+        }
+
+        .selector-button i {
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .selector-button.active i {
+            transform: rotate(180deg);
+        }
+
+        .selector-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-top: 5px;
+            overflow: hidden;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .selector-options.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .selector-option {
+            padding: 10px 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .selector-option:hover {
+            background: var(--glass);
+        }
+
+        .selector-option.active {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .language-flag {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .theme-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+
+        .theme-color.default {
+            background: linear-gradient(135deg, #3B82F6, #06B6D4);
+        }
+
+        .theme-color.purple-dream {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+        }
+
+        .theme-color.sunset-glow {
+            background: linear-gradient(135deg, #F97316, #EAB308);
+        }
+
+        .theme-color.forest-emerald {
+            background: linear-gradient(135deg, #10B981, #84CC16);
+        }
+
+        .theme-color.midnight-rose {
+            background: linear-gradient(135deg, #DB2777, #7E22CE);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Premium Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background: var(--surface);
+            background: rgba(30, 41, 59, 0.95);
             backdrop-filter: blur(20px);
             z-index: 999;
             display: flex;
@@ -265,12 +463,30 @@
             border: 1px solid var(--border);
             display: block;
             width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            transition: var(--transition);
+            z-index: -1;
         }
 
         .mobile-nav-link:hover {
-            background: var(--gradient);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
+            color: white;
+        }
+
+        .mobile-nav-link:hover::before {
+            left: 0;
         }
 
         .mobile-controls {
@@ -282,7 +498,15 @@
             max-width: 300px;
         }
 
-        .mobile-language-selector, .mobile-theme-selector {
+        .mobile-selector-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .mobile-selector-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background: var(--glass);
             border: 1px solid var(--border);
             color: var(--text);
@@ -292,6 +516,61 @@
             font-weight: 500;
             font-size: 1rem;
             width: 100%;
+            transition: var(--transition);
+        }
+
+        .mobile-selector-button:hover {
+            background: var(--surface);
+        }
+
+        .mobile-selector-button i {
+            transition: var(--transition);
+        }
+
+        .mobile-selector-button.active i {
+            transform: rotate(180deg);
+        }
+
+        .mobile-selector-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-top: 5px;
+            overflow: hidden;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-selector-options.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-selector-option {
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mobile-selector-option:hover {
+            background: var(--glass);
+        }
+
+        .mobile-selector-option.active {
+            background: var(--gradient);
+            color: white;
         }
 
         .mobile-cta-button {
@@ -310,6 +589,19 @@
             gap: 8px;
             font-size: 1rem;
             width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
         }
 
         .mobile-cta-button:hover {
@@ -317,46 +609,11 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-shrink: 0;
+        .mobile-cta-button:hover::before {
+            left: 100%;
         }
 
-        .language-selector, .theme-selector {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 8px 12px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 500;
-            min-width: 120px;
-        }
-
-        .cta-button {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Hero Section - Centered Profile */
+        /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -378,6 +635,21 @@
             border-radius: 50%;
             opacity: 0.1;
             filter: blur(80px);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.05;
+            filter: blur(60px);
+            animation: float 10s ease-in-out infinite;
         }
 
         .hero-content {
@@ -399,6 +671,8 @@
             border-radius: 20px;
             font-size: 0.9rem;
             margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .hero-title {
@@ -409,6 +683,8 @@
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .hero-subtitle {
@@ -416,6 +692,7 @@
             color: var(--secondary);
             font-weight: 600;
             margin-bottom: 25px;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         .hero-description {
@@ -426,6 +703,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
         .hero-actions {
@@ -434,6 +712,7 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out 0.8s both;
         }
 
         .btn {
@@ -448,6 +727,19 @@
             border: none;
             cursor: pointer;
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
         }
 
         .btn-primary {
@@ -460,6 +752,10 @@
             box-shadow: var(--shadow);
         }
 
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
         .btn-secondary {
             background: var(--surface);
             color: var(--text);
@@ -469,15 +765,17 @@
         .btn-secondary:hover {
             background: var(--glass);
             transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
-        /* Improved Centered Profile Picture */
+        /* Enhanced Profile Picture */
         .hero-profile {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
             margin-top: 40px;
+            animation: fadeIn 1s ease-out 1s both;
         }
 
         .profile-container {
@@ -495,6 +793,21 @@
             padding: 8px;
             animation: float 6s ease-in-out infinite;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .profile-frame::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: var(--gradient);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(10px);
         }
 
         .profile-image {
@@ -518,19 +831,21 @@
             animation: rotate 20s linear infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Sections */
+        /* Enhanced Sections */
         .section {
             padding: 100px 0;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--glass), transparent);
+            pointer-events: none;
         }
 
         .section-title {
@@ -553,7 +868,7 @@
             border-radius: 2px;
         }
 
-        /* Profile Cards */
+        /* Enhanced Profile Cards */
         .profile-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -579,6 +894,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .profile-card::before {
@@ -591,9 +907,26 @@
             background: var(--gradient);
         }
 
+        .profile-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
         .profile-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
+        }
+
+        .profile-card:hover::after {
+            opacity: 0.05;
         }
 
         .card-icon {
@@ -608,6 +941,13 @@
             color: var(--primary);
             font-size: 1.3rem;
             flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .profile-card:hover .card-icon {
+            background: var(--gradient);
+            color: white;
+            transform: scale(1.1);
         }
 
         .profile-card h3 {
@@ -635,7 +975,7 @@
             line-height: 1.5;
         }
 
-        /* Skills Grid */
+        /* Enhanced Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -649,6 +989,13 @@
             border-radius: var(--radius);
             padding: 30px;
             height: 100%;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
         }
 
         .skill-category h3 {
@@ -669,6 +1016,7 @@
             position: relative;
             padding-left: 20px;
             line-height: 1.5;
+            transition: var(--transition);
         }
 
         .skill-list li:last-child {
@@ -681,9 +1029,19 @@
             left: 0;
             color: var(--primary);
             font-weight: bold;
+            transition: var(--transition);
         }
 
-        /* Highlights */
+        .skill-list li:hover {
+            color: var(--text);
+            transform: translateX(5px);
+        }
+
+        .skill-list li:hover::before {
+            color: var(--secondary);
+        }
+
+        /* Enhanced Highlights */
         .highlights-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -703,6 +1061,8 @@
             flex-direction: column;
             align-items: center;
             height: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
         .highlight-card::before {
@@ -728,6 +1088,11 @@
             z-index: 2;
         }
 
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
         .highlight-icon {
             width: 70px;
             height: 70px;
@@ -740,6 +1105,13 @@
             color: var(--primary);
             font-size: 1.8rem;
             flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .highlight-card:hover .highlight-icon {
+            background: var(--gradient);
+            color: white;
+            transform: scale(1.1);
         }
 
         .highlight-card h3 {
@@ -755,7 +1127,7 @@
             flex-grow: 1;
         }
 
-        /* Connect Section */
+        /* Enhanced Connect Section */
         .social-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -780,20 +1152,51 @@
             transition: var(--transition);
             font-weight: 500;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
         }
 
         .social-link:hover {
-            background: var(--glass);
             transform: translateY(-2px);
             border-color: var(--primary);
+            color: white;
         }
 
-        /* Footer */
+        .social-link:hover::before {
+            opacity: 1;
+            left: 0;
+        }
+
+        /* Enhanced Footer */
         footer {
             background: var(--surface);
             padding: 40px 0;
             text-align: center;
             border-top: 1px solid var(--border);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
         }
 
         .footer-content {
@@ -811,6 +1214,11 @@
             gap: 10px;
             font-weight: 700;
             font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
         }
 
         .footer-links {
@@ -829,6 +1237,7 @@
 
         .footer-link:hover {
             color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .copyright {
@@ -838,7 +1247,7 @@
             width: 100%;
         }
 
-        /* Back to Top */
+        /* Enhanced Back to Top */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -856,11 +1265,12 @@
             font-size: 1.2rem;
             transition: var(--transition);
             z-index: 1000;
+            box-shadow: var(--shadow);
         }
 
         .back-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
 
         /* Mobile Responsive */
@@ -933,7 +1343,7 @@
             display: none;
         }
 
-        /* Animations */
+        /* Enhanced Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -943,6 +1353,48 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.1; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.15; transform: translateX(-50%) scale(1.05); }
         }
 
         /* RTL Support */
@@ -1013,7 +1465,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="mainHeader">
         <nav class="nav">
             <a href="#" class="logo">
                 <div class="logo-img">
@@ -1022,7 +1474,7 @@
                 <span data-i18n="brand">Faraz Ahammed CM</span>
             </a>
             
-            <!-- Improved Burger Menu Button -->
+            <!-- Premium Burger Menu Button -->
             <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
@@ -1030,20 +1482,68 @@
             </button>
             
             <div class="nav-controls">
-                <select class="language-selector" id="languageSelector">
-                    <option value="en">English</option>
-                    <option value="ml">Malayalam</option>
-                    <option value="hi">Hindi</option>
-                    <option value="ar">Arabic</option>
-                    <option value="sa">Sanskrit</option>
-                </select>
-                <select class="theme-selector" id="themeSelector">
-                    <option value="default">Ocean Blue</option>
-                    <option value="purple-dream">Purple Dream</option>
-                    <option value="sunset-glow">Sunset Glow</option>
-                    <option value="forest-emerald">Forest Emerald</option>
-                    <option value="midnight-rose">Midnight Rose</option>
-                </select>
+                <!-- Custom Language Selector -->
+                <div class="selector-container">
+                    <div class="selector-button" id="languageButton">
+                        <i class="fas fa-globe"></i>
+                        <span id="languageText">English</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="selector-options" id="languageOptions">
+                        <div class="selector-option active" data-value="en">
+                            <img src="https://flagcdn.com/w40/gb.png" class="language-flag" alt="English">
+                            <span>English</span>
+                        </div>
+                        <div class="selector-option" data-value="ml">
+                            <img src="https://flagcdn.com/w40/in.png" class="language-flag" alt="Malayalam">
+                            <span>Malayalam</span>
+                        </div>
+                        <div class="selector-option" data-value="hi">
+                            <img src="https://flagcdn.com/w40/in.png" class="language-flag" alt="Hindi">
+                            <span>Hindi</span>
+                        </div>
+                        <div class="selector-option" data-value="ar">
+                            <img src="https://flagcdn.com/w40/sa.png" class="language-flag" alt="Arabic">
+                            <span>Arabic</span>
+                        </div>
+                        <div class="selector-option" data-value="sa">
+                            <img src="https://flagcdn.com/w40/in.png" class="language-flag" alt="Sanskrit">
+                            <span>Sanskrit</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Custom Theme Selector -->
+                <div class="selector-container">
+                    <div class="selector-button" id="themeButton">
+                        <i class="fas fa-palette"></i>
+                        <span id="themeText">Ocean Blue</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="selector-options" id="themeOptions">
+                        <div class="selector-option active" data-value="default">
+                            <div class="theme-color default"></div>
+                            <span>Ocean Blue</span>
+                        </div>
+                        <div class="selector-option" data-value="purple-dream">
+                            <div class="theme-color purple-dream"></div>
+                            <span>Purple Dream</span>
+                        </div>
+                        <div class="selector-option" data-value="sunset-glow">
+                            <div class="theme-color sunset-glow"></div>
+                            <span>Sunset Glow</span>
+                        </div>
+                        <div class="selector-option" data-value="forest-emerald">
+                            <div class="theme-color forest-emerald"></div>
+                            <span>Forest Emerald</span>
+                        </div>
+                        <div class="selector-option" data-value="midnight-rose">
+                            <div class="theme-color midnight-rose"></div>
+                            <span>Midnight Rose</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <a href="#connect" class="cta-button" data-i18n="getInTouch">
                     <i class="fas fa-paper-plane"></i>
                     <span>Get In Touch</span>
@@ -1052,7 +1552,7 @@
         </nav>
     </header>
 
-    <!-- Improved Mobile Menu -->
+    <!-- Premium Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-links">
             <li><a href="#about" class="mobile-nav-link" data-i18n="aboutLink" onclick="closeMobileMenu()">About</a></li>
@@ -1063,20 +1563,66 @@
         </ul>
         
         <div class="mobile-controls">
-            <select class="mobile-language-selector" id="mobileLanguageSelector">
-                <option value="en">English</option>
-                <option value="ml">Malayalam</option>
-                <option value="hi">Hindi</option>
-                <option value="ar">Arabic</option>
-                <option value="sa">Sanskrit</option>
-            </select>
-            <select class="mobile-theme-selector" id="mobileThemeSelector">
-                <option value="default">Ocean Blue</option>
-                <option value="purple-dream">Purple Dream</option>
-                <option value="sunset-glow">Sunset Glow</option>
-                <option value="forest-emerald">Forest Emerald</option>
-                <option value="midnight-rose">Midnight Rose</option>
-            </select>
+            <!-- Mobile Language Selector -->
+            <div class="mobile-selector-container">
+                <div class="mobile-selector-button" id="mobileLanguageButton">
+                    <span id="mobileLanguageText">English</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-selector-options" id="mobileLanguageOptions">
+                    <div class="mobile-selector-option active" data-value="en">
+                        <img src="https://flagcdn.com/w40/gb.png" class="language-flag" alt="English">
+                        <span>English</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="ml">
+                        <img src="https://flagcdn.com/w40/in.png" class="language-flag" alt="Malayalam">
+                        <span>Malayalam</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="hi">
+                        <img src="https://flagcdn.com/w40/in.png" class="language-flag" alt="Hindi">
+                        <span>Hindi</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="ar">
+                        <img src="https://flagcdn.com/w40/sa.png" class="language-flag" alt="Arabic">
+                        <span>Arabic</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="sa">
+                        <img src="https://flagcdn.com/w40/in.png" class="language-flag" alt="Sanskrit">
+                        <span>Sanskrit</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Theme Selector -->
+            <div class="mobile-selector-container">
+                <div class="mobile-selector-button" id="mobileThemeButton">
+                    <span id="mobileThemeText">Ocean Blue</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-selector-options" id="mobileThemeOptions">
+                    <div class="mobile-selector-option active" data-value="default">
+                        <div class="theme-color default"></div>
+                        <span>Ocean Blue</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="purple-dream">
+                        <div class="theme-color purple-dream"></div>
+                        <span>Purple Dream</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="sunset-glow">
+                        <div class="theme-color sunset-glow"></div>
+                        <span>Sunset Glow</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="forest-emerald">
+                        <div class="theme-color forest-emerald"></div>
+                        <span>Forest Emerald</span>
+                    </div>
+                    <div class="mobile-selector-option" data-value="midnight-rose">
+                        <div class="theme-color midnight-rose"></div>
+                        <span>Midnight Rose</span>
+                    </div>
+                </div>
+            </div>
+            
             <a href="#connect" class="mobile-cta-button" data-i18n="getInTouch" onclick="closeMobileMenu()">
                 <i class="fas fa-paper-plane"></i>
                 <span>Get In Touch</span>
@@ -1084,10 +1630,10 @@
         </div>
     </div>
 
-    <!-- Hero Section with Centered Profile -->
+    <!-- Hero Section with Enhanced Profile -->
     <section class="hero" id="about">
         <div class="container">
-            <div class="hero-content fade-in">
+            <div class="hero-content">
                 <div class="hero-badge">
                     <i class="fas fa-graduation-cap"></i>
                     <span data-i18n="student">10th Grade Student at PMSAPTHSS</span>
@@ -1109,8 +1655,8 @@
                     </a>
                 </div>
                 
-                <!-- Centered Profile Picture -->
-                <div class="hero-profile fade-in">
+                <!-- Enhanced Profile Picture -->
+                <div class="hero-profile">
                     <div class="profile-container">
                         <div class="profile-dots"></div>
                         <div class="profile-frame">
@@ -1124,13 +1670,12 @@
             </div>
         </div>
     </section>
-    <!-- Rest of the sections remain the same as before -->
+
     <!-- Profile Section -->
     <section class="section" id="profile">
         <div class="container">
             <h2 class="section-title fade-in" data-i18n="profileTitle">Professional Profile</h2>
             <div class="profile-grid">
-                <!-- Profile cards content same as before -->
                 <div class="profile-card fade-in">
                     <div class="card-icon">
                         <i class="fas fa-user-circle"></i>
@@ -1323,22 +1868,57 @@
     </button>
 
     <script>
+        // Scroll-based header visibility
+        const header = document.getElementById('mainHeader');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateHeaderVisibility() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down - hide header
+                header.classList.add('hidden');
+                header.classList.remove('visible');
+            } else {
+                // Scrolling up - show header
+                header.classList.remove('hidden');
+                header.classList.add('visible');
+            }
+            
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeaderVisibility);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onScroll);
+
         // Burger Menu Functionality
         const burgerMenu = document.getElementById('burgerMenu');
         const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLanguageSelector = document.getElementById('mobileLanguageSelector');
-        const mobileThemeSelector = document.getElementById('mobileThemeSelector');
 
         function toggleMobileMenu() {
             burgerMenu.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            
+            // Close all selectors when menu opens/closes
+            closeAllSelectors();
         }
 
         function closeMobileMenu() {
             burgerMenu.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
+            
+            // Close all selectors when menu closes
+            closeAllSelectors();
         }
 
         burgerMenu.addEventListener('click', toggleMobileMenu);
@@ -1354,7 +1934,116 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeMobileMenu();
+                closeAllSelectors();
             }
+        });
+
+        // Custom Selector Functionality
+        const languageButton = document.getElementById('languageButton');
+        const languageOptions = document.getElementById('languageOptions');
+        const languageText = document.getElementById('languageText');
+        
+        const themeButton = document.getElementById('themeButton');
+        const themeOptions = document.getElementById('themeOptions');
+        const themeText = document.getElementById('themeText');
+        
+        const mobileLanguageButton = document.getElementById('mobileLanguageButton');
+        const mobileLanguageOptions = document.getElementById('mobileLanguageOptions');
+        const mobileLanguageText = document.getElementById('mobileLanguageText');
+        
+        const mobileThemeButton = document.getElementById('mobileThemeButton');
+        const mobileThemeOptions = document.getElementById('mobileThemeOptions');
+        const mobileThemeText = document.getElementById('mobileThemeText');
+
+        // Toggle selectors
+        languageButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageOptions.classList.toggle('active');
+            languageButton.classList.toggle('active');
+            themeOptions.classList.remove('active');
+            themeButton.classList.remove('active');
+        });
+
+        themeButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            themeOptions.classList.toggle('active');
+            themeButton.classList.toggle('active');
+            languageOptions.classList.remove('active');
+            languageButton.classList.remove('active');
+        });
+
+        mobileLanguageButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileLanguageOptions.classList.toggle('active');
+            mobileLanguageButton.classList.toggle('active');
+            mobileThemeOptions.classList.remove('active');
+            mobileThemeButton.classList.remove('active');
+        });
+
+        mobileThemeButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileThemeOptions.classList.toggle('active');
+            mobileThemeButton.classList.toggle('active');
+            mobileLanguageOptions.classList.remove('active');
+            mobileLanguageButton.classList.remove('active');
+        });
+
+        // Close selectors when clicking outside
+        document.addEventListener('click', () => {
+            closeAllSelectors();
+        });
+
+        function closeAllSelectors() {
+            languageOptions.classList.remove('active');
+            languageButton.classList.remove('active');
+            themeOptions.classList.remove('active');
+            themeButton.classList.remove('active');
+            mobileLanguageOptions.classList.remove('active');
+            mobileLanguageButton.classList.remove('active');
+            mobileThemeOptions.classList.remove('active');
+            mobileThemeButton.classList.remove('active');
+        }
+
+        // Language selection
+        document.querySelectorAll('.selector-option[data-value], .mobile-selector-option[data-value]').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const value = option.getAttribute('data-value');
+                
+                if (option.closest('#languageOptions') || option.closest('#mobileLanguageOptions')) {
+                    // Language selection
+                    updateLanguage(value);
+                    
+                    // Update active state
+                    document.querySelectorAll('#languageOptions .selector-option, #mobileLanguageOptions .mobile-selector-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    option.classList.add('active');
+                    
+                    // Update button text
+                    const langText = option.querySelector('span').textContent;
+                    languageText.textContent = langText;
+                    mobileLanguageText.textContent = langText;
+                    
+                    closeAllSelectors();
+                } else if (option.closest('#themeOptions') || option.closest('#mobileThemeOptions')) {
+                    // Theme selection
+                    updateTheme(value);
+                    
+                    // Update active state
+                    document.querySelectorAll('#themeOptions .selector-option, #mobileThemeOptions .mobile-selector-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    option.classList.add('active');
+                    
+                    // Update button text
+                    const themeTextValue = option.querySelector('span').textContent;
+                    themeText.textContent = themeTextValue;
+                    mobileThemeText.textContent = themeTextValue;
+                    
+                    closeAllSelectors();
+                }
+            });
         });
 
         // Complete translations for all languages
@@ -1741,8 +2430,6 @@
         };
 
         // Language Management
-        const languageSelector = document.getElementById('languageSelector');
-        
         function updateLanguage(lang) {
             if (!translations[lang]) lang = 'en';
             const dict = translations[lang];
@@ -1758,21 +2445,13 @@
                 });
             });
             
-            // Update selectors
-            languageSelector.value = lang;
-            mobileLanguageSelector.value = lang;
-            
             // Save preference
             localStorage.setItem('selectedLanguage', lang);
         }
 
         // Theme Management
-        const themeSelector = document.getElementById('themeSelector');
-        
         function updateTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
-            themeSelector.value = theme;
-            mobileThemeSelector.value = theme;
             localStorage.setItem('selectedTheme', theme);
         }
 
@@ -1793,12 +2472,6 @@
                 });
             }, 80);
         });
-
-        // Event listeners
-        languageSelector.addEventListener('change', (e) => updateLanguage(e.target.value));
-        mobileLanguageSelector.addEventListener('change', (e) => updateLanguage(e.target.value));
-        themeSelector.addEventListener('change', (e) => updateTheme(e.target.value));
-        mobileThemeSelector.addEventListener('change', (e) => updateTheme(e.target.value));
 
         // Back to Top Button
         const backToTop = document.getElementById('backToTop');
@@ -1840,18 +2513,6 @@
                     });
                 }
             });
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(30, 41, 59, 0.95)';
-                header.style.backdropFilter = 'blur(20px)';
-            } else {
-                header.style.background = 'rgba(30, 41, 59, 0.8)';
-                header.style.backdropFilter = 'blur(20px)';
-            }
         });
 
         // Profile picture fallback
