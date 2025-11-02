@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Ahammed CM - Website Under Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .maintenance-container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .maintenance-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            color: #FFE66D;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .countdown {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .maintenance-icon {
+                font-size: 3rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-container">
+        <div class="logo">Faraz Ahammed CM</div>
+        <div class="maintenance-icon pulse">🚧</div>
+        <h1>Website Under Maintenance</h1>
+        <p>We're working hard to bring you an amazing experience. My new portfolio website will be launched soon with exciting updates!</p>
+        
+        <div class="contact-info">
+            <p><strong>Email:</strong> farazahammedcm@gmail.com</p>
+            <p><strong>Phone:</strong> +91 9037203595</p>
+            <p><strong>Status:</strong> Coming Soon</p>
+        </div>
+
+        <p>In the meantime, you can connect with me through:</p>
+        
+        <div class="social-links">
+            <a href="https://www.youtube.com/@HFMediaMalayalam" class="social-link" target="_blank">📺</a>
+            <a href="https://www.instagram.com/faraz_ahammed_cm/" class="social-link" target="_blank">📷</a>
+            <a href="https://wa.me/+919037203595" class="social-link" target="_blank">💬</a>
+            <a href="mailto:farazahammedcm@gmail.com" class="social-link">✉️</a>
+        </div>
+
+        <div class="countdown">
+            Stay tuned! The wait will be worth it.
+        </div>
+    </div>
+
+    <script>
+        // Simple countdown animation
+        const countdownElement = document.querySelector('.countdown');
+        const messages = [
+            "Working on amazing content...",
+            "Polishing the final details...",
+            "Almost ready to launch!",
+            "Great things coming soon!",
+            "Stay tuned for the big reveal!"
+        ];
+
+        let currentMessage = 0;
+        
+        setInterval(() => {
+            countdownElement.textContent = messages[currentMessage];
+            currentMessage = (currentMessage + 1) % messages.length;
+        }, 3000);
+    </script>
+</body>
+</html>
