@@ -3,23 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Faraz Ahammed CM - 10th Grade Student, Content Creator & Digital Media Professional. Co-founder of HF Media Malayalam YouTube Channel and English Daily Shots. Explore my portfolio of video production, scriptwriting, and content strategy expertise.">
-    <meta name="keywords" content="Faraz Ahammed CM, content creator, digital media, video production, YouTube channel, scriptwriting, video editing, social media management, HF Media Malayalam, English Daily Shots">
-    <meta name="author" content="Faraz Ahammed CM">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Faraz Ahammed CM - Content Creator & Digital Media Professional">
-    <meta property="og:description" content="Co-founder of HF Media Malayalam YouTube Channel and official handle of English Daily Shots. Explore portfolio of video production, scriptwriting, and content creation.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://farazahammed.com">
-    <meta property="og:image" content="https://i.postimg.cc/rdt2JPB9/profile-new.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Faraz Ahammed CM - Content Creator & Digital Media Professional">
-    <meta name="twitter:description" content="Co-founder of HF Media Malayalam YouTube Channel and official handle of English Daily Shots.">
-    <meta name="twitter:image" content="https://i.postimg.cc/rdt2JPB9/profile-new.jpg">
-    <title>Faraz Ahammed CM - Content Creator, Video Producer & Digital Media Professional</title>
+    <title>Faraz Ahammed CM - Content Creator & Digital Media Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -57,25 +43,27 @@
         /* Custom Cursor */
         .cursor {
             position: fixed;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: rgba(249, 115, 22, 0.7);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 16px solid rgba(249, 115, 22, 0.9);
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
-            transition: transform 0.2s ease;
+            transition: transform 0.05s ease;
+            transform-origin: center;
         }
 
         .cursor-follower {
             position: fixed;
-            width: 40px;
-            height: 40px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             border: 2px solid rgba(250, 204, 21, 0.5);
             pointer-events: none;
             z-index: 9998;
-            transition: transform 0.6s ease;
+            transition: transform 0.1s ease;
         }
 
         /* Scroll Progress Bar */
@@ -94,16 +82,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        /* Glassy panel utility */
-        .glass-card {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
-            border-radius: 20px;
-            border: 1px solid rgba(148, 163, 184, 0.25);
-            box-shadow:
-                0 18px 45px rgba(15, 23, 42, 0.9),
-                0 0 0 1px rgba(15, 23, 42, 0.6);
         }
 
         /* Navigation */
@@ -1818,10 +1796,9 @@
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
             
-            setTimeout(() => {
-                cursorFollower.style.left = e.clientX + 'px';
-                cursorFollower.style.top = e.clientY + 'px';
-            }, 100);
+            // Faster follower with reduced delay
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
         });
         
         // Cursor effects on interactive elements
