@@ -40,6 +40,120 @@
             overflow-x: hidden;
         }
 
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #020617 0%, #050816 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(249, 115, 22, 0.8);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+            z-index: 2;
+            position: relative;
+        }
+
+        .loading-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            animation: rotate 3s linear infinite;
+        }
+
+        .circle-1 {
+            width: 160px;
+            height: 160px;
+            border-top: 2px solid #F97316;
+            border-right: 2px solid transparent;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 180px;
+            height: 180px;
+            border-top: 2px solid #FACC15;
+            border-right: 2px solid transparent;
+            animation-delay: 0.2s;
+        }
+
+        .circle-3 {
+            width: 200px;
+            height: 200px;
+            border-top: 2px solid #22C55E;
+            border-right: 2px solid transparent;
+            animation-delay: 0.4s;
+        }
+
+        .loading-text {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #9CA3AF;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .loading-dots {
+            display: inline-block;
+            width: 20px;
+            text-align: left;
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes dots {
+            0%, 20% {
+                content: '.';
+            }
+            40% {
+                content: '..';
+            }
+            60%, 100% {
+                content: '...';
+            }
+        }
+
         /* Custom Cursor */
         .cursor {
             position: fixed;
@@ -1467,6 +1581,19 @@
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <img src="https://i.postimg.cc/6qdYn1cm/dp-1.png" alt="Faraz Ahammed" class="loading-image">
+            <div class="loading-circle circle-1"></div>
+            <div class="loading-circle circle-2"></div>
+            <div class="loading-circle circle-3"></div>
+        </div>
+        <div class="loading-text">
+            Loading<span class="loading-dots"></span>
+        </div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
@@ -1866,6 +1993,21 @@
     </footer>
 
     <script>
+        // Loading screen functionality
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            
+            // Show loading screen for at least 2 seconds for better UX
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                
+                // Remove from DOM after transition completes
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 800);
+            }, 2000);
+        });
+
         // Custom cursor
         const cursor = document.querySelector('.cursor');
         const cursorFollower = document.querySelector('.cursor-follower');
