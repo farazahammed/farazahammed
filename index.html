@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Faraz Ahammed CM - Content Creator & Digital Media Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
@@ -27,6 +27,34 @@
             --border-subtle: rgba(148, 163, 184, 0.25);
             --white: #FFFFFF;
         }
+/* ADD THIS RIGHT AFTER :root { } */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 12px !important;
+        max-width: 100% !important;
+    }
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 16px;
+    }
+}
+
 
         html {
             scroll-behavior: smooth;
