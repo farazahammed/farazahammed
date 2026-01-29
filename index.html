@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Faraz Ahammed CM - Also Known As FRZ CM </title>
-	<link rel="icon" type="image/png" href="https://i.postimg.cc/6qdYn1cm/dp-1.png">
-
+    <title>Faraz Ahammed CM - Content Creator & Founder known as FRZ CM</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/6qdYn1cm/dp-1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -13,7 +12,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            cursor: none;
         }
 
         :root {
@@ -29,34 +27,28 @@
             --border-subtle: rgba(148, 163, 184, 0.25);
             --white: #FFFFFF;
         }
-/* ADD THIS RIGHT AFTER :root { } */
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    position: relative;
-}
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    width: 100%;
-    box-sizing: border-box;
-}
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 0 12px !important;
-        max-width: 100% !important;
-    }
-    body {
-        padding: 0 !important;
-        margin: 0 !important;
-        font-size: 16px;
-    }
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 0 12px !important;
+                max-width: 100% !important;
+            }
+        }
 
         html {
             scroll-behavior: smooth;
@@ -68,186 +60,120 @@ html, body {
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            cursor: none;
         }
 
-        /* Loading Screen - Perfectly Centered */
-        .loading-screen {
+        /* Enhanced Custom Cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #F97316;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle at center, #020617 0%, #050816 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loading-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .loading-image {
-            width: 120px;
-            height: 120px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(249, 115, 22, 0.8);
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
-            z-index: 2;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .loading-circle {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            animation: rotate 3s linear infinite;
-        }
-
-        .circle-1 {
-            width: 160px;
-            height: 160px;
-            border-top: 2px solid #F97316;
-            border-right: 2px solid transparent;
-            animation-delay: 0s;
-        }
-
-        .circle-2 {
-            width: 180px;
-            height: 180px;
-            border-top: 2px solid #FACC15;
-            border-right: 2px solid transparent;
-            animation-delay: 0.2s;
-        }
-
-        .circle-3 {
-            width: 200px;
-            height: 200px;
-            border-top: 2px solid #22C55E;
-            border-right: 2px solid transparent;
-            animation-delay: 0.4s;
-        }
-
-        .loading-text {
-            margin-top: 30px;
-            font-size: 1.2rem;
-            color: #9CA3AF;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 300;
-            text-align: center;
-            width: 100%;
-        }
-
-        .loading-dots {
-            display: inline-block;
-            width: 20px;
-            text-align: left;
-        }
-
-        .loading-dots::after {
-            content: '';
-            animation: dots 1.5s steps(5, end) infinite;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes dots {
-            0%, 20% {
-                content: '.';
-            }
-            40% {
-                content: '..';
-            }
-            60%, 100% {
-                content: '...';
-            }
-        }
-
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 16px solid rgba(249, 115, 22, 0.9);
             pointer-events: none;
             z-index: 9999;
+            transition: transform 0.1s ease;
             mix-blend-mode: difference;
-            transition: transform 0.05s ease;
-            transform-origin: center;
         }
 
-        .cursor-follower {
+        .cursor-dot-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(249, 115, 22, 0.5);
             position: fixed;
-            width: 24px;
-            height: 24px;
             border-radius: 50%;
-            border: 2px solid rgba(250, 204, 21, 0.5);
             pointer-events: none;
             z-index: 9998;
-            transition: transform 0.1s ease;
+            transition: all 0.15s ease-out;
+            mix-blend-mode: difference;
         }
 
-        /* Scroll Progress Bar */
-        .scroll-progress {
+        .cursor-dot.hover {
+            transform: scale(1.5);
+            background-color: #FFE66D;
+        }
+
+        .cursor-dot-outline.hover {
+            transform: scale(1.5);
+            border-color: #FFE66D;
+            background-color: rgba(255, 230, 109, 0.1);
+        }
+
+        .cursor-dot.click {
+            transform: scale(0.8);
+            background-color: #4ECDC4;
+        }
+
+        .cursor-dot-outline.click {
+            transform: scale(0.9);
+            border-color: #4ECDC4;
+        }
+
+        /* Enhanced Scroll Progress Bar */
+        .scroll-progress-container {
             position: fixed;
             top: 0;
             left: 0;
-            width: 0%;
+            width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #FFE66D);
+            background: rgba(15, 23, 42, 0.8);
             z-index: 1001;
-            transition: width 0.1s ease;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .scroll-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, 
+                #FF6B6B 0%, 
+                #F97316 25%, 
+                #FACC15 50%, 
+                #22C55E 75%, 
+                #3B82F6 100%);
+            transition: width 0.1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         /* Navigation */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
+            top: 4px;
+            width: calc(100% - 8px);
+            left: 4px;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.96));
             backdrop-filter: blur(16px);
             padding: 12px 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-            transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, transform 0.4s ease;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 12px;
+            margin: 0 4px;
+            transition: all 0.3s ease;
         }
 
         nav.scrolled {
             background: rgba(15, 23, 42, 0.97);
             padding: 8px 0;
             box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+            border-color: rgba(249, 115, 22, 0.3);
         }
 
         nav .container {
@@ -276,6 +202,12 @@ html, body {
             border-radius: 999px;
             background: radial-gradient(circle, #22C55E, #16A34A);
             box-shadow: 0 0 12px #22C55E;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         nav ul {
@@ -326,27 +258,21 @@ html, body {
             border: none;
             padding: 9px 20px;
             border-radius: 999px;
-            cursor: none;
             font-weight: 600;
             font-size: 0.85rem;
             transition: all 0.25s ease;
-            box-shadow:
-                0 0 0 1px rgba(15, 23, 42, 0.9),
-                0 14px 32px rgba(249, 115, 22, 0.45);
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9), 0 14px 32px rgba(249, 115, 22, 0.45);
         }
 
         .nav-btn:hover {
             transform: translateY(-1px) scale(1.02);
-            box-shadow:
-                0 0 0 1px rgba(15, 23, 42, 0.9),
-                0 18px 40px rgba(249, 115, 22, 0.6);
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9), 0 18px 40px rgba(249, 115, 22, 0.6);
         }
 
         .menu-toggle {
             display: none;
             flex-direction: column;
             gap: 5px;
-            cursor: none;
         }
 
         .menu-toggle span {
@@ -359,40 +285,27 @@ html, body {
 
         /* Hero Section */
         .hero {
-            margin-top: 88px;
-            min-height: calc(100vh - 88px);
+            margin-top: 100px;
+            min-height: calc(100vh - 100px);
             display: flex;
             align-items: center;
             position: relative;
             padding: 72px 0 80px;
         }
 
-        .hero::before,
-        .hero::after {
+        .hero::before {
             content: '';
             position: fixed;
-            border-radius: 999px;
-            filter: blur(80px);
-            opacity: 0.4;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 50% 50%, 
+                rgba(249, 115, 22, 0.1) 0%,
+                rgba(15, 23, 42, 0) 70%);
+            pointer-events: none;
             z-index: -1;
-        }
-
-        .hero::before {
-            width: 420px;
-            height: 420px;
-            top: -80px;
-            right: -80px;
-            background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.35), transparent);
-            animation: float 12s ease-in-out infinite;
-        }
-
-        .hero::after {
-            width: 420px;
-            height: 420px;
-            bottom: -80px;
-            left: -120px;
-            background: radial-gradient(circle at 100% 100%, rgba(249, 115, 22, 0.4), transparent);
-            animation: float 16s ease-in-out infinite reverse;
         }
 
         .hero-content {
@@ -427,6 +340,7 @@ html, body {
             border-radius: 999px;
             background: #22C55E;
             box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+            animation: pulse 2s infinite;
         }
 
         .hero h1 {
@@ -441,6 +355,18 @@ html, body {
             background: linear-gradient(120deg, #F97316, #FACC15, #22C55E);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #F97316, #FACC15, #22C55E);
+            opacity: 0.5;
         }
 
         .hero-subtitle {
@@ -475,6 +401,12 @@ html, body {
             align-items: center;
             gap: 8px;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.96));
+            transition: all 0.3s ease;
+        }
+
+        .meta-pill:hover {
+            border-color: #F97316;
+            transform: translateY(-2px);
         }
 
         .meta-pill i {
@@ -493,7 +425,6 @@ html, body {
             border: none;
             border-radius: 999px;
             font-weight: 600;
-            cursor: none;
             transition: all 0.25s ease;
             font-size: 0.9rem;
             display: inline-flex;
@@ -505,16 +436,12 @@ html, body {
         .btn-primary {
             background: radial-gradient(circle at 0 0, #F97316, #FACC15);
             color: #020617;
-            box-shadow:
-                0 0 0 1px rgba(15, 23, 42, 0.8),
-                0 20px 45px rgba(249, 115, 22, 0.5);
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8), 0 20px 45px rgba(249, 115, 22, 0.5);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px) scale(1.02);
-            box-shadow:
-                0 0 0 1px rgba(15, 23, 42, 0.8),
-                0 26px 60px rgba(249, 115, 22, 0.7);
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8), 0 26px 60px rgba(249, 115, 22, 0.7);
         }
 
         .btn-secondary {
@@ -531,19 +458,6 @@ html, body {
 
         .hero-image {
             position: relative;
-        }
-
-        .image-orbit {
-            position: absolute;
-            inset: -16%;
-            border-radius: 999px;
-            border: 1px dashed rgba(148, 163, 184, 0.3);
-            border-top-color: #F97316;
-            border-right-color: #22C55E;
-            border-bottom-color: #3B82F6;
-            transform: rotate(-8deg);
-            animation: orbit 20s linear infinite;
-            opacity: 0.55;
         }
 
         .image-wrapper {
@@ -563,9 +477,7 @@ html, body {
             justify-content: center;
             padding: 12px;
             animation: morphing 10s ease-in-out infinite;
-            box-shadow:
-                0 28px 65px rgba(15, 23, 42, 0.9),
-                0 0 0 1px rgba(15, 23, 42, 0.9);
+            box-shadow: 0 28px 65px rgba(15, 23, 42, 0.9), 0 0 0 1px rgba(15, 23, 42, 0.9);
         }
 
         .image-shape img {
@@ -576,37 +488,45 @@ html, body {
             border: 3px solid rgba(15, 23, 42, 0.7);
         }
 
-        .image-floating-badge {
+        /* Animated floating badges */
+        .floating-badge {
             position: absolute;
-            bottom: 14%;
-            left: -10%;
-            padding: 10px 14px;
-            border-radius: 18px;
+            padding: 10px 16px;
             background: rgba(15, 23, 42, 0.95);
-            border: 1px solid rgba(148, 163, 184, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #E5E7EB;
-            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.8);
-            animation: float 10s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+            z-index: 10;
         }
 
-        .image-floating-badge i {
-            color: #22C55E;
-        }
-
-        .image-floating-dot {
-            position: absolute;
+        .floating-badge:nth-child(1) {
             top: 10%;
-            right: 4%;
-            width: 10px;
-            height: 10px;
-            border-radius: 999px;
-            background: #22C55E;
-            box-shadow: 0 0 16px rgba(34, 197, 94, 1);
-            animation: pulse 1.8s ease-in-out infinite;
+            right: -10%;
+            animation-delay: 0s;
+        }
+
+        .floating-badge:nth-child(2) {
+            bottom: 20%;
+            left: -10%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes morphing {
+            0%, 100% { border-radius: 34% 66% 70% 30% / 30% 30% 70% 70%; }
+            25% { border-radius: 58% 42% 38% 62% / 58% 58% 42% 42%; }
+            50% { border-radius: 70% 30% 46% 54% / 30% 30% 54% 70%; }
+            75% { border-radius: 56% 44% 54% 46% / 44% 58% 42% 56%; }
         }
 
         /* Sections */
@@ -681,6 +601,12 @@ html, body {
             border: 1px solid rgba(148, 163, 184, 0.3);
             font-size: 0.9rem;
             color: #E5E7EB;
+            transition: all 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-3px);
+            border-color: #F97316;
         }
 
         .info-box strong {
@@ -727,9 +653,8 @@ html, body {
 
         .skill-card:hover {
             transform: translateY(-6px);
-            box-shadow:
-                0 0 0 1px rgba(15, 23, 42, 0.9),
-                0 26px 60px rgba(15, 23, 42, 0.95);
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9), 0 26px 60px rgba(15, 23, 42, 0.95);
+            border-color: #FACC15;
         }
 
         .skill-icon {
@@ -774,18 +699,14 @@ html, body {
             overflow: hidden;
             background: #020617;
             border: 1px solid rgba(148, 163, 184, 0.35);
-            box-shadow:
-                0 24px 60px rgba(15, 23, 42, 1),
-                0 0 0 1px rgba(15, 23, 42, 0.9);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 1), 0 0 0 1px rgba(15, 23, 42, 0.9);
             transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
             border-color: rgba(250, 204, 21, 0.9);
-            box-shadow:
-                0 30px 80px rgba(15, 23, 42, 1),
-                0 0 0 1px rgba(15, 23, 42, 1);
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 1), 0 0 0 1px rgba(15, 23, 42, 1);
         }
 
         .project-image {
@@ -797,6 +718,18 @@ html, body {
             justify-content: center;
             color: #FEFCE8;
             font-size: 2.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(249, 115, 22, 0.2), rgba(59, 130, 246, 0.2));
         }
 
         .project-content {
@@ -831,6 +764,12 @@ html, body {
             font-size: 0.78rem;
             font-weight: 500;
             border: 1px solid rgba(148, 163, 184, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            border-color: #F97316;
         }
 
         .project-link {
@@ -910,6 +849,7 @@ html, body {
             transform: translateX(-50%);
             top: 16px;
             box-shadow: 0 0 16px rgba(250, 204, 21, 0.9);
+            animation: pulse 2s infinite;
         }
 
         .timeline-content {
@@ -918,6 +858,12 @@ html, body {
             border-radius: 14px;
             border: 1px solid rgba(148, 163, 184, 0.4);
             backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(5px);
+            border-color: #FACC15;
         }
 
         .timeline-content h3 {
@@ -957,9 +903,7 @@ html, body {
             background: radial-gradient(circle at 0 0, rgba(250, 204, 21, 0.16), rgba(15, 23, 42, 0.98));
             border: 1px solid rgba(250, 204, 21, 0.45);
             text-align: left;
-            box-shadow:
-                0 22px 52px rgba(15, 23, 42, 0.95),
-                0 0 0 1px rgba(15, 23, 42, 0.9);
+            box-shadow: 0 22px 52px rgba(15, 23, 42, 0.95), 0 0 0 1px rgba(15, 23, 42, 0.9);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -983,9 +927,7 @@ html, body {
         .highlight-card:hover {
             transform: translateY(-6px);
             border-color: rgba(250, 250, 249, 0.9);
-            box-shadow:
-                0 28px 70px rgba(15, 23, 42, 1),
-                0 0 0 1px rgba(15, 23, 42, 1);
+            box-shadow: 0 28px 70px rgba(15, 23, 42, 1), 0 0 0 1px rgba(15, 23, 42, 1);
         }
 
         .highlight-number {
@@ -1042,6 +984,12 @@ html, body {
             background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.98));
             border: 1px solid rgba(148, 163, 184, 0.35);
             text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            border-color: #F97316;
         }
 
         .contact-item i {
@@ -1072,6 +1020,12 @@ html, body {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .email-box:hover {
+            border-color: #FACC15;
+            transform: translateY(-3px);
         }
 
         .email-box-header {
@@ -1116,7 +1070,6 @@ html, body {
             background: transparent;
             border: none;
             color: #F97316;
-            cursor: none;
             font-size: 0.8rem;
             padding: 4px 8px;
             border-radius: 6px;
@@ -1135,12 +1088,16 @@ html, body {
             background: radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.3), rgba(15, 23, 42, 0.98));
             border: 1px solid rgba(59, 130, 246, 0.6);
             text-align: center;
-            box-shadow:
-                0 20px 50px rgba(15, 23, 42, 0.95),
-                0 0 0 1px rgba(15, 23, 42, 0.9);
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95), 0 0 0 1px rgba(15, 23, 42, 0.9);
             display: flex;
             flex-direction: column;
             justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .datetime-card:hover {
+            transform: translateY(-3px);
+            border-color: #3B82F6;
         }
 
         .datetime-card-header {
@@ -1159,6 +1116,7 @@ html, body {
             font-size: 1.5rem;
             color: #F9FAFB;
             margin-bottom: 2px;
+            font-weight: 700;
         }
 
         .datetime-date {
@@ -1185,9 +1143,25 @@ html, body {
             color: #020617;
             font-size: 1.05rem;
             transition: all 0.25s ease;
-            cursor: none;
             text-decoration: none;
             box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .social-icon:hover::before {
+            left: 100%;
         }
 
         .social-icon:hover {
@@ -1205,9 +1179,7 @@ html, body {
             border-radius: 20px;
             background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.98));
             border: 1px solid rgba(148, 163, 184, 0.5);
-            box-shadow:
-                0 22px 60px rgba(15, 23, 42, 1),
-                0 0 0 1px rgba(15, 23, 42, 0.9);
+            box-shadow: 0 22px 60px rgba(15, 23, 42, 1), 0 0 0 1px rgba(15, 23, 42, 0.9);
             text-align: left;
         }
 
@@ -1251,9 +1223,7 @@ html, body {
         .form-group textarea:focus {
             outline: none;
             border-color: #FACC15;
-            box-shadow:
-                0 0 0 1px rgba(15, 23, 42, 1),
-                0 0 0 1px rgba(250, 204, 21, 0.7);
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 1), 0 0 0 1px rgba(250, 204, 21, 0.7);
         }
 
         .form-group textarea {
@@ -1265,6 +1235,46 @@ html, body {
             width: 100%;
             justify-content: center;
             margin-top: 4px;
+        }
+
+        /* Success Message */
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #22C55E, #16A34A);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+            z-index: 10000;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(26px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-on-scroll {
+            opacity: 0;
+            transform: translateY(26px);
+        }
+
+        .fade-on-scroll.visible {
+            animation: fadeIn 0.6s ease-out forwards;
         }
 
         /* Footer */
@@ -1281,76 +1291,14 @@ html, body {
             color: #E5E7EB;
         }
 
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-16px); }
-        }
-
-        @keyframes morphing {
-            0%, 100% { border-radius: 34% 66% 70% 30% / 30% 30% 70% 70%; }
-            25% { border-radius: 58% 42% 38% 62% / 58% 58% 42% 42%; }
-            50% { border-radius: 70% 30% 46% 54% / 30% 30% 54% 70%; }
-            75% { border-radius: 56% 44% 54% 46% / 44% 58% 42% 56%; }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(26px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.85; }
-            50% { transform: scale(1.22); opacity: 1; }
-        }
-
-        @keyframes orbit {
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes rgb {
-            0% { background-color: #FF6B6B; }
-            25% { background-color: #4ECDC4; }
-            50% { background-color: #FFE66D; }
-            75% { background-color: #F97316; }
-            100% { background-color: #FF6B6B; }
-        }
-
-        .fade-on-scroll {
-            opacity: 0;
-            transform: translateY(26px);
-        }
-
-        .fade-on-scroll.visible {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        /* Tablet Responsive - 1024px and below */
-        @media (max-width: 1024px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .hero-content {
-                gap: 40px;
-            }
-
-            .about-content {
-                gap: 36px;
-            }
-
-            .section-title {
-                font-size: 1.9rem;
-            }
-        }
-
-        /* Tablet / Mobile Nav - 768px and below */
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            * {
+            body {
                 cursor: auto;
             }
 
-            .cursor, .cursor-follower {
+            .cursor-dot,
+            .cursor-dot-outline {
                 display: none;
             }
 
@@ -1453,7 +1401,7 @@ html, body {
             }
 
             .about-image {
-                display: none; /* Hide second profile picture on mobile */
+                display: none;
             }
 
             .skills-grid {
@@ -1511,7 +1459,6 @@ html, body {
             }
         }
 
-        /* Small Phones - 480px and below */
         @media (max-width: 480px) {
             .container {
                 padding: 0 12px;
@@ -1570,136 +1517,23 @@ html, body {
             footer p {
                 font-size: 0.78rem;
             }
-
-            /* Loading screen on small phones */
-            .loading-container {
-                width: 160px;
-                height: 160px;
-            }
-
-            .loading-image {
-                width: 90px;
-                height: 90px;
-            }
-
-            .circle-1 {
-                width: 120px;
-                height: 120px;
-            }
-
-            .circle-2 {
-                width: 140px;
-                height: 140px;
-            }
-
-            .circle-3 {
-                width: 160px;
-                height: 160px;
-            }
-
-            .loading-text {
-                font-size: 1rem;
-                margin-top: 20px;
-            }
-        }
-
-        /* Extra Small Phones - 360px and below */
-        @media (max-width: 360px) {
-            .logo {
-                font-size: 1.1rem;
-            }
-
-            .image-wrapper {
-                max-width: 210px;
-            }
-
-            .datetime-time {
-                font-size: 1.1rem;
-            }
-
-            /* Extra small loading screen */
-            .loading-container {
-                width: 140px;
-                height: 140px;
-            }
-
-            .loading-image {
-                width: 80px;
-                height: 80px;
-            }
-
-            .circle-1 {
-                width: 100px;
-                height: 100px;
-            }
-
-            .circle-2 {
-                width: 120px;
-                height: 120px;
-            }
-
-            .circle-3 {
-                width: 140px;
-                height: 140px;
-            }
-
-            .loading-text {
-                font-size: 0.9rem;
-                margin-top: 16px;
-            }
-        }
-
-        /* Large Screens - 1920px and above */
-        @media (min-width: 1920px) {
-            .container {
-                max-width: 1320px;
-            }
-
-            .hero h1 {
-                font-size: 3.6rem;
-            }
-
-            .section-title {
-                font-size: 2.6rem;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            nav,
-            .hero-buttons,
-            .contact-form,
-            footer {
-                display: none;
-            }
-
-            section {
-                page-break-inside: avoid;
-                padding: 20px 0;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-container">
-            <img src="https://i.postimg.cc/6qdYn1cm/dp-1.png" alt="Faraz Ahammed" class="loading-image">
-            <div class="loading-circle circle-1"></div>
-            <div class="loading-circle circle-2"></div>
-            <div class="loading-circle circle-3"></div>
-        </div>
-        <div class="loading-text">
-            Loading<span class="loading-dots"></span>
-        </div>
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i> Message sent successfully!
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <!-- Enhanced Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-dot-outline" id="cursorDotOutline"></div>
 
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
+    <!-- Enhanced Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -1734,13 +1568,13 @@ html, body {
                 <div class="hero-text fade-on-scroll">
                     <div class="hero-label">
                         <span class="hero-label-dot"></span>
-                        CONTENT CREATOR • STUDENT
+                        FOUNDER • CONTENT CREATOR • STUDENT
                     </div>
                     <h1>Hi, I'm <span>Faraz Ahammed&nbsp;CM</span></h1>
-                    <div class="hero-subtitle">Co‑founder · HF Media Malayalam · English Daily Shots</div>
+                    <div class="hero-subtitle">Founder of FRZ NOTES • HF Media Malayalam • English Daily Shots</div>
                     <p>
                         10th‑grade student at PMSAPTHSS who balances academics with digital content creation,
-                        video production, and social media growth.
+                        video production, and social media growth. Founder of FRZ NOTES educational platform.
                     </p>
                     <div class="hero-meta">
                         <span class="meta-pill">
@@ -1749,10 +1583,13 @@ html, body {
                         <span class="meta-pill">
                             <i class="fab fa-youtube"></i> 310K+ total views
                         </span>
+                        <span class="meta-pill">
+                            <i class="fas fa-graduation-cap"></i> Founder - FRZ NOTES
+                        </span>
                     </div>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-play"></i> View my channels
+                            <i class="fas fa-play"></i> View my projects
                         </a>
                         <a href="#contact" class="btn btn-secondary">
                             <i class="fas fa-paper-plane"></i> Contact me
@@ -1760,19 +1597,24 @@ html, body {
                     </div>
                 </div>
                 <div class="hero-image fade-on-scroll">
-                    <div class="image-orbit"></div>
                     <div class="image-wrapper">
                         <div class="image-shape">
                             <img src="https://i.postimg.cc/rdt2JPB9/profile-new.jpg" alt="Faraz Ahammed" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'">
                         </div>
-                        <div class="image-floating-badge">
+                        <div class="floating-badge">
                             <i class="fas fa-bolt"></i>
                             <div>
                                 <div style="font-weight:600;">Content in two languages</div>
                                 <div style="font-size:0.78rem;color:#9CA3AF;">Malayalam • English</div>
                             </div>
                         </div>
-                        <span class="image-floating-dot"></span>
+                        <div class="floating-badge">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <div style="font-weight:600;">FRZ NOTES</div>
+                                <div style="font-size:0.78rem;color:#9CA3AF;">Educational Platform</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1792,14 +1634,16 @@ html, body {
                     </div>
                 </div>
                 <div class="about-text fade-on-scroll">
-                    <h3>Personal Information</h3>
+                    <h3>Founder & Content Creator</h3>
                     <p>
                         10th‑grade student at PMSAPTHSS with hands‑on experience in YouTube channel management,
-                        scriptwriting, and video editing for Malayalam and English audiences.
+                        scriptwriting, and video editing for Malayalam and English audiences. Founder of FRZ NOTES,
+                        an educational platform providing quality study materials.
                     </p>
                     <p>
                         Co‑founder of HF Media Malayalam and managing partner of English Daily Shots, focusing on
-                        consistent content, storytelling and audience engagement.
+                        consistent content, storytelling and audience engagement. Balancing academics with creative
+                        entrepreneurship.
                     </p>
 
                     <div class="info-grid">
@@ -1807,7 +1651,7 @@ html, body {
                             <strong>Full Name:</strong> Faraz Ahammed CM
                         </div>
                         <div class="info-box">
-                            <strong>Gender:</strong> Male
+                            <strong>Founder:</strong> FRZ NOTES
                         </div>
                         <div class="info-box">
                             <strong>Email:</strong> farazahammedcm@gmail.com
@@ -1823,6 +1667,9 @@ html, body {
                         </div>
                         <div class="info-box">
                             <strong>Location:</strong> Vazhayur, Kerala
+                        </div>
+                        <div class="info-box">
+                            <strong>YouTube Channels:</strong> 3 Active Channels
                         </div>
                     </div>
                 </div>
@@ -1877,6 +1724,20 @@ html, body {
                     <h3>Content Strategy</h3>
                     <p>Planning series, playlists and content calendars around what the audience actually watches.</p>
                 </div>
+                <div class="skill-card fade-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Educational Content Creation</h3>
+                    <p>Creating structured educational materials and study resources for FRZ NOTES platform.</p>
+                </div>
+                <div class="skill-card fade-on-scroll">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Promoting content across platforms and analyzing performance metrics for optimization.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1886,6 +1747,24 @@ html, body {
         <div class="container">
             <h2 class="section-title fade-on-scroll">Featured Projects</h2>
             <div class="projects-grid">
+                <div class="project-card fade-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>FRZ NOTES</h3>
+                        <p>Educational platform providing quality study materials, notes, and resources for students. Founded to help academic learning through digital content.</p>
+                        <div class="project-tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">Study Materials</span>
+                            <span class="tag">Digital Learning</span>
+                        </div>
+                        <a href="https://frz-notes.blogspot.com" class="project-link">
+                            visit site <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="project-card fade-on-scroll">
                     <div class="project-image">
                         <i class="fab fa-youtube"></i>
@@ -1906,7 +1785,7 @@ html, body {
 
                 <div class="project-card fade-on-scroll">
                     <div class="project-image">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-language"></i>
                     </div>
                     <div class="project-content">
                         <h3>English Daily Shots</h3>
@@ -1933,8 +1812,17 @@ html, body {
                 <div class="timeline-item fade-on-scroll">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <h3>Founder, FRZ NOTES</h3>
+                        <div class="date">2025 – Present</div>
+                        <p>Founded an educational platform providing quality study materials and digital learning resources for students.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
                         <h3>Co‑founder, HF Media Malayalam</h3>
-                        <div class="date">May 2024 – Present</div>
+                        <div class="date">April 2021 – Present</div>
                         <p>Co‑founded a YouTube channel focused on Malayalam culture and entertainment, building views and subscribers through consistent uploads.</p>
                     </div>
                 </div>
@@ -1952,7 +1840,7 @@ html, body {
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Student, PMSAPTHSS</h3>
-                        <div class="date">2024 – Present</div>
+                        <div class="date">2025 – Present</div>
                         <p>10th‑grade student maintaining good academics alongside active creative projects and competitions.</p>
                     </div>
                 </div>
@@ -1975,19 +1863,24 @@ html, body {
             <h2 class="section-title fade-on-scroll">Professional Highlights</h2>
             <div class="highlights-grid">
                 <div class="highlight-card fade-on-scroll">
-                    <div class="highlight-number">281</div>
-                    <h3>HF Media Malayalam Subscribers</h3>
-                    <p>Growing Malayalam‑language channel covering culture, entertainment and lifestyle from a Kerala point of view.</p>
+                    <div class="highlight-number">3</div>
+                    <h3>Active Projects</h3>
+                    <p>Managing 3 successful projects simultaneously: FRZ NOTES, HF Media Malayalam, and English Daily Shots.</p>
                 </div>
                 <div class="highlight-card fade-on-scroll">
-                    <div class="highlight-number">78</div>
-                    <h3>English Daily Shots Videos</h3>
-                    <p>Short, focused videos that help viewers build practical English step by step.</p>
+                    <div class="highlight-number">310K+</div>
+                    <h3>Total YouTube Views</h3>
+                    <p>Combined views across all channels demonstrating content reach and audience engagement.</p>
                 </div>
                 <div class="highlight-card fade-on-scroll">
-                    <div class="highlight-number">10th</div>
-                    <h3>Academic Excellence</h3>
-                    <p>Balancing schoolwork and channel responsibilities with a strong focus on consistency and discipline.</p>
+                    <div class="highlight-number">100+</div>
+                    <h3>Videos Created</h3>
+                    <p>Total educational and entertainment videos produced across different platforms and channels.</p>
+                </div>
+                <div class="highlight-card fade-on-scroll">
+                    <div class="highlight-number">2</div>
+                    <h3>Languages</h3>
+                    <p>Creating content in both Malayalam and English, reaching diverse audiences across language barriers.</p>
                 </div>
             </div>
         </div>
@@ -2056,32 +1949,31 @@ html, body {
             </div>
 
             <!-- Contact Form -->
-<div class="contact-form-wrapper fade-on-scroll">
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwpwazbr" method="POST">
-        <h3>Send a Message</h3>
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-submit">
-            <i class="fas fa-paper-plane"></i>
-            Send Message
-        </button>
-    </form>
-</div>
-
+            <div class="contact-form-wrapper fade-on-scroll">
+                <form class="contact-form" id="contactForm">
+                    <h3>Send a Message</h3>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -2093,30 +1985,61 @@ html, body {
     </footer>
 
     <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            const loadingScreen = document.getElementById('loadingScreen');
-            setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-            }, 2000);
-        });
+        // Enhanced Custom Cursor
+        const cursorDot = document.getElementById('cursorDot');
+        const cursorOutline = document.getElementById('cursorDotOutline');
 
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const cursorFollower = document.querySelector('.cursor-follower');
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
+            cursorDot.style.left = `${e.clientX}px`;
+            cursorDot.style.top = `${e.clientY}px`;
+            
+            cursorOutline.style.left = `${e.clientX}px`;
+            cursorOutline.style.top = `${e.clientY}px`;
         });
 
-        // Scroll Progress Bar
+        // Hover effects
+        document.querySelectorAll('a, button, .btn, .nav-btn, .skill-card, .project-card, .highlight-card, .contact-item, .social-icon').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('hover');
+                cursorOutline.classList.add('hover');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('hover');
+                cursorOutline.classList.remove('hover');
+            });
+        });
+
+        // Click effect
+        document.addEventListener('click', () => {
+            cursorDot.classList.add('click');
+            cursorOutline.classList.add('click');
+            
+            setTimeout(() => {
+                cursorDot.classList.remove('click');
+                cursorOutline.classList.remove('click');
+            }, 150);
+        });
+
+        // Enhanced Scroll Progress Bar
         window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            
+            document.getElementById('scrollProgressBar').style.width = scrollPercent + '%';
+            
+            // Change gradient based on scroll position
+            const progressBar = document.getElementById('scrollProgressBar');
+            if (scrollPercent < 25) {
+                progressBar.style.background = 'linear-gradient(90deg, #FF6B6B 0%, #F97316 100%)';
+            } else if (scrollPercent < 50) {
+                progressBar.style.background = 'linear-gradient(90deg, #F97316 0%, #FACC15 100%)';
+            } else if (scrollPercent < 75) {
+                progressBar.style.background = 'linear-gradient(90deg, #FACC15 0%, #22C55E 100%)';
+            } else {
+                progressBar.style.background = 'linear-gradient(90deg, #22C55E 0%, #3B82F6 100%)';
+            }
         });
 
         // Navbar Scroll Effect
@@ -2181,6 +2104,7 @@ html, body {
             const timeString = now.toLocaleTimeString('en-IN', {
                 hour: '2-digit',
                 minute: '2-digit',
+                second: '2-digit',
                 hour12: true
             });
             const dateString = now.toLocaleDateString('en-IN', {
@@ -2227,34 +2151,80 @@ html, body {
             });
         });
 
-        // Contact Form Submission with Formspree
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    const submitBtn = this.querySelector('.btn-submit');
-    const originalText = submitBtn.innerHTML;
-    const originalBg = submitBtn.style.background;
-    
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    // Formspree handles the actual submission
-    // This just provides visual feedback
-    setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-        submitBtn.style.background = 'radial-gradient(circle at 0 0, #22C55E, #16A34A)';
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = originalBg;
-            // Formspree will handle redirect or reset
-        }, 3000);
-    }, 1500);
-});
+        // Google Sheets Integration for Contact Form (using your URL)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                timestamp: new Date().toISOString(),
+                source: 'Faraz Portfolio Website'
+            };
+            
+            // Your Google Apps Script Web App URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxNsaSZsmbMMzZbvyKXoBSjclP-TSDXhHIHVYQtsE3PXdrpLf0K7jyv5la62AS2o28/exec';
+            
+            // Send data to Google Sheets
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                // Show success message
+                const successMsg = document.getElementById('successMessage');
+                successMsg.style.display = 'block';
+                
+                // Clear form
+                form.reset();
+                
+                // Reset button
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                submitBtn.style.background = 'radial-gradient(circle at 0 0, #22C55E, #16A34A)';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 5000);
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = 'radial-gradient(circle at 0 0, #F97316, #FACC15)';
+                }, 3000);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Try Again';
+                submitBtn.style.background = 'radial-gradient(circle at 0 0, #EF4444, #DC2626)';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = 'radial-gradient(circle at 0 0, #F97316, #FACC15)';
+                }, 3000);
+            });
+        });
 
         // Navbar active on page load
         document.querySelector('nav a[href="#about"]').classList.add('active');
     </script>
 </body>
 </html>
-
-
