@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f0f8ff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .error-code {
+            font-size: 10rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #00c9ff, #92fe9d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #d1e8ff;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .home-btn {
+            background: linear-gradient(to right, #00c9ff, #92fe9d);
+            color: #0f2027;
+            box-shadow: 0 5px 15px rgba(0, 201, 255, 0.3);
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 201, 255, 0.4);
+        }
+        
+        .contact-btn {
+            background: transparent;
+            color: #92fe9d;
+            border: 2px solid #92fe9d;
+            box-shadow: 0 5px 15px rgba(146, 254, 157, 0.2);
+        }
+        
+        .contact-btn:hover {
+            background: rgba(146, 254, 157, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(146, 254, 157, 0.3);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .explorer {
+            margin: 30px 0;
+            font-size: 4rem;
+            color: #00c9ff;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .footer {
+            margin-top: 50px;
+            color: #a0c8ff;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .error-code {
+                font-size: 7rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .message {
+                font-size: 1.1rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <div class="explorer">
+            <i class="fas fa-map-signs"></i>
+        </div>
+        <h1>Oops! Page Not Found</h1>
+        <p class="message">
+            The page you're looking for seems to have wandered off. Don't worry, even the best explorers get lost sometimes. Let's get you back on track!
+        </p>
+        
+        <div class="buttons">
+            <a href="https://farazcm.netlify.app" class="btn home-btn">
+                <i class="fas fa-home"></i> Go to Homepage
+            </a>
+            <a href="mailto:farazahammed77@gmail.com?subject=Page%20Not%20Found%20on%20Portfolio%20Site" class="btn contact-btn">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 Faraz's Portfolio. All rights reserved.</p>
+            <p><i class="fas fa-exclamation-triangle"></i> The requested page could not be found.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add a subtle pulse animation to the error code
+            const errorCode = document.querySelector('.error-code');
+            setInterval(() => {
+                errorCode.style.textShadow = '0 5px 20px rgba(0, 201, 255, 0.4)';
+                setTimeout(() => {
+                    errorCode.style.textShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+                }, 500);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
