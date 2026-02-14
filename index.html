@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Enhanced SEO Meta Tags -->
     <title>Faraz Ahammed CM (FRZ CM) - Founder FRZ NOTES, FRZ Generations | HF Media Malayalam Co-founder</title>
@@ -53,7 +56,7 @@
             "https://www.youtube.com/@HFMediaMalayalam",
             "https://www.youtube.com/@EnglishDailyShots",
             "https://www.instagram.com/faraz_ahammed_cm/",
-            "https://frznotes.netlify.app"
+            "https://frz-notes.blogspot.com"
         ],
         "jobTitle": "Founder & Content Creator",
         "worksFor": [
@@ -61,7 +64,7 @@
                 "@type": "Organization",
                 "name": "FRZ NOTES",
                 "alternateName": "FRZ Generations",
-                "url": "https://frznotes.netlify.app",
+                "url": "https://frz-notes.blogspot.com",
                 "description": "Educational platform providing quality study materials and productivity tools for students",
                 "founder": {
                     "@type": "Person",
@@ -170,6 +173,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-overflow-scrolling: touch;
         }
 
         :root {
@@ -184,6 +189,8 @@
 
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
 
         body {
@@ -192,6 +199,8 @@
             color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -884,43 +893,107 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Navigation Mobile */
             .menu-toggle {
                 display: flex;
+            }
+
+            nav {
+                padding: 1rem 0;
+            }
+
+            nav .container {
+                padding: 0 1rem;
             }
 
             nav ul {
                 display: none;
                 position: absolute;
-                top: 70px;
+                top: 60px;
                 left: 0;
                 right: 0;
                 background: rgba(15, 23, 42, 0.98);
                 flex-direction: column;
-                padding: 2rem;
+                padding: 1.5rem;
                 gap: 1rem;
                 border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             }
 
             nav ul.active {
                 display: flex;
             }
 
-            .hero-content,
-            .about-content,
-            .contact-grid {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            /* Container & Spacing */
+            .container {
+                padding: 0 1rem !important;
+            }
+
+            section {
+                padding: 3rem 0 !important;
+            }
+
+            /* Hero Section Mobile */
+            .hero {
+                padding-top: 80px;
+                min-height: auto;
+            }
+
+            .hero-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text {
+                order: 2;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: 1;
             }
 
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 1.8rem !important;
+                line-height: 1.2;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .hero-text .subtitle {
+                font-size: 1rem;
             }
 
-            .container {
-                padding: 0 1rem;
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+
+            .badges {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .image-wrapper {
+                max-width: 280px !important;
             }
 
             .floating-card:nth-child(2),
@@ -928,22 +1001,281 @@
                 display: none;
             }
 
+            /* Tools Marquee Mobile */
             .tools-marquee-section {
-                padding: 2rem 0;
+                padding: 2rem 0 !important;
+            }
+
+            .tools-marquee-section h3 {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+                margin-bottom: 1.5rem;
             }
 
             .marquee-content {
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
             .tool-item {
-                min-width: 150px;
-                padding: 1rem;
+                min-width: 130px;
+                padding: 1rem 0.8rem;
             }
 
             .tool-item img {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .tool-item h4 {
+                font-size: 0.85rem;
+            }
+
+            /* Section Titles Mobile */
+            .section-title {
+                font-size: 1.6rem !important;
+                margin-bottom: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.85rem;
+            }
+
+            /* About Section Mobile */
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                display: flex;
+                justify-content: center;
+            }
+
+            .about-image .gradient-border {
+                max-width: 250px !important;
+            }
+
+            .about-text h3 {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            .about-text p {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .info-item {
+                padding: 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            /* Skills Section Mobile */
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .skill-card {
+                padding: 1.5rem;
+            }
+
+            .skill-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .skill-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .skill-card p {
+                font-size: 0.88rem;
+            }
+
+            /* Projects Section Mobile */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-card {
+                margin: 0 0.5rem;
+            }
+
+            .project-image {
+                height: 150px;
+                font-size: 2.5rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .project-content p {
+                font-size: 0.88rem;
+            }
+
+            .tag {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.6rem;
+            }
+
+            /* Highlights Section Mobile */
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .highlight-card {
+                padding: 1.5rem;
+            }
+
+            .highlight-number {
+                font-size: 2.5rem;
+            }
+
+            .highlight-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .highlight-card p {
+                font-size: 0.85rem;
+            }
+
+            /* Contact Section Mobile */
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-item {
+                padding: 1.2rem;
+            }
+
+            .contact-item i {
+                font-size: 1.5rem;
+            }
+
+            .contact-item h4 {
+                font-size: 0.95rem;
+            }
+
+            .contact-item p {
+                font-size: 0.85rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .contact-form h3 {
+                font-size: 1.2rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.2rem;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 0.9rem;
+                font-size: 0.9rem;
+            }
+
+            /* Support Section Mobile */
+            #support {
+                padding: 3rem 0 !important;
+            }
+
+            #support > div > div {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            #support h3 {
+                font-size: 1.2rem !important;
+            }
+
+            #support p {
+                font-size: 0.88rem !important;
+            }
+
+            /* Footer Mobile */
+            footer {
+                padding: 1.5rem 0;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+
+            /* Success Message Mobile */
+            .success-message {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Phones */
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.5rem !important;
+            }
+
+            .section-title {
+                font-size: 1.4rem !important;
+            }
+
+            .tool-item {
+                min-width: 110px;
+                padding: 0.8rem 0.5rem;
+            }
+
+            .tool-item img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .tool-item h4 {
+                font-size: 0.75rem;
+            }
+
+            .image-wrapper {
+                max-width: 220px !important;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
             }
         }
     </style>
@@ -1010,7 +1342,7 @@
                             <i class="fas fa-book"></i> Founder<br><strong>FRZ NOTES</strong>
                         </div>
                         <div class="floating-card">
-                            <i class="fab fa-youtube"></i> Co-founder<br><strong>HF Media Malayalam</strong>
+                            <i class="fab fa-youtube"></i> Co-founder<br><strong>HF Media</strong>
                         </div>
                     </div>
                 </div>
@@ -1120,7 +1452,7 @@
                         <div class="info-item"><strong>Managing Partner:</strong> English Daily Shots (2025)</div>
                         <div class="info-item"><strong>Student at:</strong> PMSAPTHSS (10th Grade)</div>
                         <div class="info-item"><strong>Location:</strong> Vazhayur, Kerala, India</div>
-                        <div class="info-item"><strong>Email:</strong> farazahammedcm@gmail.com</div>
+                        <div class="info-item"><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2d4d3c0d3c8d3dad3dfdfd7d6d1dff2d5dfd3dbde9cd1dddf">[email&#160;protected]</a></div>
                         <div class="info-item"><strong>Phone:</strong> +91 9037203595</div>
                     </div>
                 </div>
@@ -1191,7 +1523,7 @@
                             <span class="tag">7+ Tools</span>
                             <span class="tag">Founded 2025</span>
                         </div>
-                        <a href="https://frznotes.netlify.app" target="_blank" class="project-link">
+                        <a href="https://frz-notes.blogspot.com" target="_blank" class="project-link">
                             Visit FRZ NOTES <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1260,7 +1592,7 @@
                 <div class="highlight-card">
                     <div class="highlight-number">3</div>
                     <h3>Active Ventures</h3>
-                    <p>Managing FRZ NOTES, HF Media Malayalam, and English Daily Shots</p>
+                    <p>Managing FRZ NOTES, HF Media, and English Daily Shots</p>
                 </div>
                 <div class="highlight-card">
                     <div class="highlight-number">7+</div>
@@ -1282,7 +1614,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>farazahammedcm@gmail.com</p>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b0d0a190a110a030a06060e0f08062b0c060a020745080406">[email&#160;protected]</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1304,7 +1636,7 @@
                         <a href="https://www.youtube.com/@HFMediaMalayalam" target="_blank" class="social-icon" title="HF Media Malayalam"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.youtube.com/@EnglishDailyShots" target="_blank" class="social-icon" title="English Daily Shots"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.instagram.com/faraz_ahammed_cm/" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://frznotes.netlify.app" target="_blank" class="social-icon" title="FRZ NOTES"><i class="fas fa-book"></i></a>
+                        <a href="https://frz-notes.blogspot.com" target="_blank" class="social-icon" title="FRZ NOTES"><i class="fas fa-book"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -1369,8 +1701,8 @@
                     </div>
                     <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Tool-Related Queries</h3>
                     <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Have questions about our tools? Contact us directly for assistance.</p>
-                    <a href="mailto:frzgenerations@gmail.com" class="btn btn-primary" style="display: inline-flex;">
-                        <i class="fas fa-paper-plane"></i> frzgenerations@gmail.com
+                    <a href="/cdn-cgi/l/email-protection#0365717964666d667162776a6c6d7043646e626a6f2d606c6e" class="btn btn-primary" style="display: inline-flex;">
+                        <i class="fas fa-paper-plane"></i> <span class="__cf_email__" data-cfemail="1771656d707279726576637e78796457707a767e7b3974787a">[email&#160;protected]</span>
                     </a>
                 </div>
             </div>
@@ -1488,4 +1820,15 @@
         // Pause marquee on hover
         const marquee = document.querySelector('.marquee');
         marquee.addEventListener('mouseenter', () => {
-            marquee.querySelectorAll('.marquee-content').f
+            marquee.querySelectorAll('.marquee-content').forEach(content => {
+                content.style.animationPlayState = 'paused';
+            });
+        });
+        marquee.addEventListener('mouseleave', () => {
+            marquee.querySelectorAll('.marquee-content').forEach(content => {
+                content.style.animationPlayState = 'running';
+            });
+        });
+    </script>
+</body>
+</html>
