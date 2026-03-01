@@ -3,63 +3,63 @@
 
   <!-- ===== MAIN PAGES ===== -->
   <url>
-    <loc>https://farazahammedcm.com/</loc>
+    <loc>https://farazcm.netlify.app/</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/#about</loc>
+    <loc>https://farazcm.netlify.app/#about</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/#tools</loc>
+    <loc>https://farazcm.netlify.app/#tools</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/#skills</loc>
+    <loc>https://farazcm.netlify.app/#skills</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/#projects</loc>
+    <loc>https://farazcm.netlify.app/#projects</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/#highlights</loc>
+    <loc>https://farazcm.netlify.app/#highlights</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/#contact</loc>
+    <loc>https://farazcm.netlify.app/#contact</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/#support</loc>
+    <loc>https://farazcm.netlify.app/#support</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://farazahammedcm.com/sitemap.html</loc>
+    <loc>https://farazcm.netlify.app/sitemap.html</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
